@@ -317,15 +317,9 @@
 									"mode": "urlencoded",
 									"urlencoded": [
 										{
-											"key": "username",
+											"key": "method",
 											"value": "sabry",
-											"description": "admin username",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "1234",
-											"description": "password of user",
+											"description": "admin username or email",
 											"type": "text"
 										}
 									]
@@ -342,232 +336,6 @@
 								}
 							},
 							"response": [
-								{
-									"name": "Done",
-									"originalRequest": {
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"key": "username",
-													"value": "sabry",
-													"description": "admin username",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "12345",
-													"description": "password of user",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{APP_URL}}/admin/auth",
-											"host": [
-												"{{APP_URL}}"
-											],
-											"path": [
-												"admin",
-												"auth"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "x-powered-by",
-											"value": "HTL Academy"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
-										},
-										{
-											"key": "Access-Control-Allow-Credentials",
-											"value": "true"
-										},
-										{
-											"key": "Access-Control-Allow-Methods",
-											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-										},
-										{
-											"key": "Access-Control-Max-Age",
-											"value": "86400"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Referrer-Policy",
-											"value": "no-referrer"
-										},
-										{
-											"key": "Cross-Origin-Embedder-Policy",
-											"value": "require-corp"
-										},
-										{
-											"key": "Cross-Origin-Opener-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Resource-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "559"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"22f-K+EC7pAjYdJ3cswRBRmPKesZByk\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 05 Dec 2023 19:52:11 GMT"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Welcome sabry\",\n    \"data\": {\n        \"id\": 4,\n        \"uuid\": \"fe12d661-bd4e-4001-ab93-5cbdde40e328\",\n        \"username\": \"sabry\",\n        \"email\": \"tsest@me.com\",\n        \"profilePic\": \"/images/user.svg\",\n        \"level\": \"super\",\n        \"createdAt\": \"2023-12-05T19:49:09.000Z\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXVpZCI6ImZlMTJkNjYxLWJkNGUtNDAwMS1hYjkzLTVjYmRkZTQwZTMyOCIsInVzZXJuYW1lIjoic2FicnkiLCJlbWFpbCI6InRzZXN0QG1lLmNvbSIsImxldmVsIjoic3VwZXIiLCJjcmVhdGVkQXQiOiIyMDIzLTEyLTA1VDE5OjQ5OjA5LjAwMFoiLCJpYXQiOjE3MDE4MDU5MzF9.Z4kadwmqf0v0_ghjiIXZ-Z5x4RhxucjQXjD0mcdx9-s\"\n    }\n}"
-								},
-								{
-									"name": "Invalid password",
-									"originalRequest": {
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"key": "username",
-													"value": "sabry",
-													"description": "admin username",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "1234",
-													"description": "password of user",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{APP_URL}}/admin/auth",
-											"host": [
-												"{{APP_URL}}"
-											],
-											"path": [
-												"admin",
-												"auth"
-											]
-										}
-									},
-									"status": "Bad Request",
-									"code": 400,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "x-powered-by",
-											"value": "HTL Academy"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
-										},
-										{
-											"key": "Access-Control-Allow-Credentials",
-											"value": "true"
-										},
-										{
-											"key": "Access-Control-Allow-Methods",
-											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-										},
-										{
-											"key": "Access-Control-Max-Age",
-											"value": "86400"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Referrer-Policy",
-											"value": "no-referrer"
-										},
-										{
-											"key": "Cross-Origin-Embedder-Policy",
-											"value": "require-corp"
-										},
-										{
-											"key": "Cross-Origin-Opener-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Cross-Origin-Resource-Policy",
-											"value": "same-origin"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "54"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"36-TuU4jt9t7kxyr1p5puPP8sSbZ3Q\""
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 05 Dec 2023 19:52:51 GMT"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": \"Invalid password\",\n    \"error\": true,\n    \"code\": 400\n}"
-								},
 								{
 									"name": "not Exist",
 									"originalRequest": {
@@ -680,6 +448,492 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Admin is not Exist\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "method",
+													"value": "sabry",
+													"description": "admin username or email",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "82"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"52-DCx/EHAH1bgHYSRcZ+0sA5xKraY\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 20:22:07 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Please Check Your Email kazouya25@gmail.com\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Accept-Login",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "method",
+											"value": "sabry",
+											"description": "admin username or email",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "XXBKU3U5",
+											"description": "password of user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/auth/accept",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"accept"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Invalid password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "method",
+													"value": "sabry",
+													"description": "admin username or email",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "1234",
+													"description": "password of user",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth/accept",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth",
+												"accept"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "54"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"36-TuU4jt9t7kxyr1p5puPP8sSbZ3Q\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 20:22:59 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Invalid password\",\n    \"error\": true,\n    \"code\": 400\n}"
+								},
+								{
+									"name": "not Exist",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "method",
+													"value": "sabrys",
+													"description": "admin username or email",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "1234",
+													"description": "password of user",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth/accept",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth",
+												"accept"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "56"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"38-rgb/YCo6zfr5KJJVltZA4lM63wQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 20:23:40 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Admin is not Exist\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "method",
+													"value": "sabry",
+													"description": "admin username or email",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "password of user",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth/accept",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth",
+												"accept"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "598"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"256-//9mqMI8d+d7iIMnvjxRYB4XC1s\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Dec 2023 20:24:03 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Welcome sabry\",\n    \"data\": {\n        \"id\": 4,\n        \"uuid\": \"fe12d661-bd4e-4001-ab93-5cbdde40e328\",\n        \"username\": \"sabry\",\n        \"email\": \"kazouya25@gmail.com\",\n        \"profilePic\": \"/images/user.svg\",\n        \"level\": \"super\",\n        \"createdAt\": \"2023-12-05T19:49:09.000Z\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXVpZCI6ImZlMTJkNjYxLWJkNGUtNDAwMS1hYjkzLTVjYmRkZTQwZTMyOCIsInVzZXJuYW1lIjoic2FicnkiLCJlbWFpbCI6Imthem91eWEyNUBnbWFpbC5jb20iLCJsZXZlbCI6InN1cGVyIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wNVQxOTo0OTowOS4wMDBaIiwiaWF0IjoxNzAyMDY3MDQzLCJleHAiOjE3MDQ2NTkwNDN9.J5UutQercxU6nNsH78igV6rzFl2VBcVajmC43sxYMa8\"\n    }\n}"
 								}
 							]
 						},
@@ -799,6 +1053,2216 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "FindAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/admin/categoreis",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"categoreis"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "442"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1ba-LC/YaGrV3fkS9n/ERDhV/fvEN+4\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:33:36 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 3,\n            \"uuid\": \"d7d2fe96-49ab-41f6-86ed-60982a5576e1\",\n            \"oldId\": null,\n            \"title\": \"software2\",\n            \"desc\": \"software description \",\n            \"createdAt\": \"2023-12-13T18:31:49.000Z\",\n            \"updatedAt\": \"2023-12-13T18:33:09.000Z\"\n        }\n    ],\n    \"pagination\": {\n        \"page\": 1,\n        \"itemPerPage\": 10,\n        \"totalItems\": 1,\n        \"count\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": 0,\n        \"hasNextPage\": false,\n        \"hasNextTwoPage\": false,\n        \"hasNextThreePage\": false,\n        \"hasPreviousPage\": false,\n        \"hasPagenation\": false\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "software2",
+											"description": "category title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "software description ",
+											"description": "category description",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/categoreis",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"categoreis"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Already Exist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "title",
+													"value": "software",
+													"description": "category title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "category description",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "60"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3c-zpb5ntH0yQVa1l1Bo30ggLfj4hk\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:30:12 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"Category Already Exist\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "title",
+													"value": "software2",
+													"description": "category title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "category description",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "257"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"101-af8nJaLaEw8ty3FXWpY3FuMI4ew\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:31:49 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Category Added Successfully\",\n    \"data\": {\n        \"uuid\": \"d7d2fe96-49ab-41f6-86ed-60982a5576e1\",\n        \"id\": 3,\n        \"title\": \"software2\",\n        \"desc\": \"software description \",\n        \"updatedAt\": \"2023-12-13T18:31:49.334Z\",\n        \"createdAt\": \"2023-12-13T18:31:49.334Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "3",
+											"description": "category id",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "software2",
+											"description": "category title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "software description ",
+											"description": "category description",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/categoreis",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"categoreis"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "category id",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "software1",
+													"description": "category title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "category description",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "56"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"38-emtEst+90J5zaUHEhhUp5pdEjoM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:32:31 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"Category Not Found\"\n}"
+								},
+								{
+									"name": "No Changes",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "3",
+													"description": "category id",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "software1",
+													"description": "category title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "category description",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "67"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"43-8ms1ZBJhtaDOmlwyorXRb+SYcc8\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:32:53 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"No Changes To Update Category\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "3",
+													"description": "category id",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "software2",
+													"description": "category title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "category description",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "272"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"110-KZiuczWOUWdN2pvW/X0+aNL1duA\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:33:09 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Category Updated Successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"uuid\": \"d7d2fe96-49ab-41f6-86ed-60982a5576e1\",\n        \"oldId\": null,\n        \"title\": \"software2\",\n        \"desc\": \"software description \",\n        \"createdAt\": \"2023-12-13T18:31:49.000Z\",\n        \"updatedAt\": \"2023-12-13T18:33:09.654Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "category id",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/categoreis",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"categoreis"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "category id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "56"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"38-emtEst+90J5zaUHEhhUp5pdEjoM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:30:48 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"Category Not Found\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "2",
+													"description": "category id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "68"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"44-5sFNzD1CSGeJ1pMHVvV6aiofT78\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:31:09 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Category Deleted Successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Sub Categories",
+					"item": [
+						{
+							"name": "FindAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/admin/sub-categoreis",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"sub-categoreis"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APP_URL}}/admin/categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"categoreis"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "442"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1ba-LC/YaGrV3fkS9n/ERDhV/fvEN+4\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:33:36 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 3,\n            \"uuid\": \"d7d2fe96-49ab-41f6-86ed-60982a5576e1\",\n            \"oldId\": null,\n            \"title\": \"software2\",\n            \"desc\": \"software description \",\n            \"createdAt\": \"2023-12-13T18:31:49.000Z\",\n            \"updatedAt\": \"2023-12-13T18:33:09.000Z\"\n        }\n    ],\n    \"pagination\": {\n        \"page\": 1,\n        \"itemPerPage\": 10,\n        \"totalItems\": 1,\n        \"count\": 1,\n        \"nextPage\": 2,\n        \"previousPage\": 0,\n        \"hasNextPage\": false,\n        \"hasNextTwoPage\": false,\n        \"hasNextThreePage\": false,\n        \"hasPreviousPage\": false,\n        \"hasPagenation\": false\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "software subcat3",
+											"description": "sub category title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "software subcat description  ",
+											"description": "sub category description",
+											"type": "text"
+										},
+										{
+											"key": "categId",
+											"value": "3",
+											"description": "category  id  (parent )",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/sub-categoreis",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"sub-categoreis"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Category Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "title",
+													"value": "software2",
+													"description": "sub category title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "sub category description",
+													"type": "text"
+												},
+												{
+													"key": "categId",
+													"value": "1",
+													"description": "category  id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/sub-categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"sub-categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "56"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"38-emtEst+90J5zaUHEhhUp5pdEjoM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:39:53 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"Category Not Found\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "title",
+													"value": "software subcat",
+													"description": "sub category title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software subcat description  ",
+													"description": "sub category description",
+													"type": "text"
+												},
+												{
+													"key": "categId",
+													"value": "3",
+													"description": "category  id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/sub-categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"sub-categoreis"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "286"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"11e-2TooqN3jrltHMPDlMyjTfDbyHo0\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:41:04 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"SubCategory Added Successfully\",\n    \"data\": {\n        \"uuid\": \"80966a0d-7d9f-44ba-89fd-305b91d345ef\",\n        \"id\": 2,\n        \"title\": \"software subcat\",\n        \"desc\": \"software subcat description  \",\n        \"categId\": 3,\n        \"updatedAt\": \"2023-12-13T18:41:04.605Z\",\n        \"createdAt\": \"2023-12-13T18:41:04.605Z\"\n    }\n}"
+								},
+								{
+									"name": "Already Exist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "title",
+													"value": "software subcat",
+													"description": "sub category title",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software subcat description  ",
+													"description": "sub category description",
+													"type": "text"
+												},
+												{
+													"key": "categId",
+													"value": "3",
+													"description": "category  id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/sub-categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"sub-categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "81"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"51-TYSrr7nVO1nCKOU8RC11k2L4miM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:41:31 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"SubCategory Already Exist For This Category\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "sub category id",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "software2",
+											"description": "sub category title ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "software description ",
+											"description": "sub category description",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/sub-categoreis",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"sub-categoreis"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "3",
+													"description": "sub category id",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "software2",
+													"description": "sub category title ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "sub category description",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/sub-categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"sub-categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "59"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3b-uPaINgTxZ7sQoqJ5xRIg7wvbqiI\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:43:08 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"SubCategory Not Found\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "2",
+													"description": "sub category id",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "software2",
+													"description": "sub category title ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "sub category description",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/sub-categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"sub-categoreis"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "274"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"112-OJkeHtTwqYWzHSzZPDkHlMQIrJs\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:43:47 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"SubCategory Updated Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"uuid\": \"80966a0d-7d9f-44ba-89fd-305b91d345ef\",\n        \"title\": \"software2\",\n        \"desc\": \"software description \",\n        \"createdAt\": \"2023-12-13T18:41:04.000Z\",\n        \"updatedAt\": \"2023-12-13T18:43:47.782Z\",\n        \"categId\": 3\n    }\n}"
+								},
+								{
+									"name": "No Changes",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "2",
+													"description": "sub category id",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "software2",
+													"description": "sub category title ",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "software description ",
+													"description": "sub category description",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/sub-categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"sub-categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "67"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"43-8ms1ZBJhtaDOmlwyorXRb+SYcc8\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:44:01 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"No Changes To Update Category\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "sub category id",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/sub-categoreis",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"sub-categoreis"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "sub category id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/sub-categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"sub-categoreis"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "59"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3b-uPaINgTxZ7sQoqJ5xRIg7wvbqiI\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:45:00 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"SubCategory Not Found\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "id",
+													"value": "2",
+													"description": "sub category id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/sub-categoreis",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"sub-categoreis"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"47-jDVlxboKlClwurQ58UqQSDPFThE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Dec 2023 18:45:13 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"SubCategory Deleted Successfully\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Find All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/admin/users",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -818,7 +3282,7 @@
 									"urlencoded": [
 										{
 											"key": "method",
-											"value": "kaz@gmail.com",
+											"value": "sabry199",
 											"description": "user username or email",
 											"type": "text"
 										},
@@ -2439,6 +4903,3389 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createdUser",
+									"value": "1",
+									"description": "user id",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "project one",
+									"description": "project title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this project is created as a TEST",
+									"description": "project description",
+									"type": "text"
+								},
+								{
+									"key": "skills",
+									"value": "['designer']",
+									"description": "Project skills ",
+									"type": "text"
+								},
+								{
+									"key": "expectedBudget",
+									"value": "5000",
+									"description": "budget",
+									"type": "text"
+								},
+								{
+									"key": "estimatedDeliveryTime",
+									"value": "12-15-2023",
+									"description": "MM-DD-YYYY",
+									"type": "text"
+								},
+								{
+									"key": "categId",
+									"value": "3",
+									"description": "category Id",
+									"type": "text"
+								},
+								{
+									"key": "subCategId",
+									"value": "",
+									"description": "sub Category Id ( optical )",
+									"type": "text"
+								},
+								{
+									"key": "attachments",
+									"value": "[]",
+									"description": "attachments (optical , array ) ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/project",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "2",
+									"description": "project id",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "project one",
+									"description": "project title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this project is created as a TEST",
+									"description": "project description",
+									"type": "text"
+								},
+								{
+									"key": "expectedBudget",
+									"value": "5000",
+									"description": "budget",
+									"type": "text"
+								},
+								{
+									"key": "estimatedDeliveryTime",
+									"value": "12-15-2024",
+									"description": "MM-DD-YYYY",
+									"type": "text"
+								},
+								{
+									"key": "skills",
+									"value": "['designer']",
+									"description": "Project skills ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "attachments",
+									"value": "[]",
+									"description": "attachments (optical , array ) ",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/project",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Done",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "project id",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "project one",
+											"description": "project title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "this project is created as a TEST",
+											"description": "project description",
+											"type": "text"
+										},
+										{
+											"key": "expectedBudget",
+											"value": "5000",
+											"description": "budget",
+											"type": "text"
+										},
+										{
+											"key": "estimatedDeliveryTime",
+											"value": "12-15-2023",
+											"description": "MM-DD-YYYY",
+											"type": "text"
+										},
+										{
+											"key": "skills",
+											"value": "['designer']",
+											"description": "Project skills ",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "attachments",
+											"value": "[]",
+											"description": "attachments (optical , array ) ",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/project",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"project"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19e-O28zgRGhOuF2SiyoJCtVoDOjJOk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 22:45:44 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"project is Updated\",\n    \"data\": {\n        \"id\": 2,\n        \"uuid\": \"e0e70163-5987-48d9-b4cc-6a3d33edff50\",\n        \"title\": \"project one\",\n        \"description\": \"this project is created as a TEST\",\n        \"skills\": \"['designer']\",\n        \"expectedBudget\": \"5000\",\n        \"estimatedDeliveryTime\": \"12-15-2023\",\n        \"status\": true,\n        \"createdAt\": \"2023-12-13T22:26:54.000Z\",\n        \"updatedAt\": \"2023-12-13T22:45:44.167Z\",\n        \"createdUser\": 1,\n        \"categId\": 3,\n        \"subCategId\": null\n    }\n}"
+						},
+						{
+							"name": "not Exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "24",
+											"description": "project id",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "project one",
+											"description": "project title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "this project is created as a TEST",
+											"description": "project description",
+											"type": "text"
+										},
+										{
+											"key": "expectedBudget",
+											"value": "5000",
+											"description": "budget",
+											"type": "text"
+										},
+										{
+											"key": "estimatedDeliveryTime",
+											"value": "12-15-2023",
+											"description": "MM-DD-YYYY",
+											"type": "text"
+										},
+										{
+											"key": "skills",
+											"value": "['designer']",
+											"description": "Project skills ",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "attachments",
+											"value": "[]",
+											"description": "attachments (optical , array ) ",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/project",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"project"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-rYwfOXBu08ACGzI298StJjlBBXg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 22:46:19 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"project is not Exist\"\n}"
+						},
+						{
+							"name": "expectedBudget Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "project id",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "project one",
+											"description": "project title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "this project is created as a TEST",
+											"description": "project description",
+											"type": "text"
+										},
+										{
+											"key": "expectedBudget",
+											"value": "gg",
+											"description": "budget",
+											"type": "text"
+										},
+										{
+											"key": "estimatedDeliveryTime",
+											"value": "12-15-2023",
+											"description": "MM-DD-YYYY",
+											"type": "text"
+										},
+										{
+											"key": "skills",
+											"value": "['designer']",
+											"description": "Project skills ",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "attachments",
+											"value": "[]",
+											"description": "attachments (optical , array ) ",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/project",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"project"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-N40L7Uefrf679+xGGgyzkFy6EPQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 22:47:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"expectedBudget mut be a number\"\n}"
+						},
+						{
+							"name": "Delivery Time Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "project id",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "project one",
+											"description": "project title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "this project is created as a TEST",
+											"description": "project description",
+											"type": "text"
+										},
+										{
+											"key": "expectedBudget",
+											"value": "5000",
+											"description": "budget",
+											"type": "text"
+										},
+										{
+											"key": "estimatedDeliveryTime",
+											"value": "12-15-202",
+											"description": "MM-DD-YYYY",
+											"type": "text"
+										},
+										{
+											"key": "skills",
+											"value": "['designer']",
+											"description": "Project skills ",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "attachments",
+											"value": "[]",
+											"description": "attachments (optical , array ) ",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/project",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"project"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5d-lsTAb9JuMPcQCsbcGU5wpYN8VYc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 22:47:42 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"Estimated Delivery Time is required and must be a date.\"\n}"
+						},
+						{
+							"name": "No Changes",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "project id",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "project one",
+											"description": "project title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "this project is created as a TEST",
+											"description": "project description",
+											"type": "text"
+										},
+										{
+											"key": "expectedBudget",
+											"value": "5000",
+											"description": "budget",
+											"type": "text"
+										},
+										{
+											"key": "estimatedDeliveryTime",
+											"value": "12-15-2024",
+											"description": "MM-DD-YYYY",
+											"type": "text"
+										},
+										{
+											"key": "skills",
+											"value": "['designer']",
+											"description": "Project skills ",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "attachments",
+											"value": "[]",
+											"description": "attachments (optical , array ) ",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/project",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"project"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-Q0K9CTxbiLhvuuaExIAg3YqWL78\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 22:49:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"No Changes To Update Project\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "72",
+									"description": "project that i want to delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/project",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{APP_URL}}/project/2",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"project",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{APP_URL}}/project",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_URL}}/service",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Done",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "246"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f6-P3bXTau+WLLpQ/kEdFooM71Xbfw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 18:47:56 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"data\": [],\n    \"pagination\": {\n        \"page\": 1,\n        \"itemPerPage\": 10,\n        \"totalItems\": 0,\n        \"count\": 0,\n        \"nextPage\": 2,\n        \"previousPage\": 0,\n        \"hasNextPage\": false,\n        \"hasNextTwoPage\": false,\n        \"hasNextThreePage\": false,\n        \"hasPreviousPage\": false,\n        \"hasPagenation\": false\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "createdUser",
+									"value": "1",
+									"description": "service created user",
+									"type": "text"
+								},
+								{
+									"key": "featured",
+									"value": "true",
+									"description": "boolean (true or false )",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "first service 2",
+									"description": "service title ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "fisrt service description",
+									"description": "service description",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "https://placehold.co/400",
+									"description": "service image (url)",
+									"type": "text"
+								},
+								{
+									"key": "tag[0]",
+									"value": "software",
+									"description": "service tags (array of strings)  index 0",
+									"type": "text"
+								},
+								{
+									"key": "tag[1]",
+									"value": "backend",
+									"description": "service tags (array of strings)  index 1",
+									"type": "text"
+								},
+								{
+									"key": "tag[2]",
+									"value": "frontend",
+									"description": "service tags (array of strings)  index 2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"description": "service price ",
+									"type": "text"
+								},
+								{
+									"key": "deliveryTime",
+									"value": "7",
+									"description": "service deliveryTime ( number of days )",
+									"type": "text"
+								},
+								{
+									"key": "categId",
+									"value": "3",
+									"description": "category id ",
+									"type": "text"
+								},
+								{
+									"key": "subCategId",
+									"value": "3",
+									"description": "sub category id (optical )",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "",
+									"description": "service discount (optical)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/service",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Already Have it",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "createdUser",
+											"value": "1",
+											"description": "service created user",
+											"type": "text"
+										},
+										{
+											"key": "featured",
+											"value": "true",
+											"description": "boolean (true or false )",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "first service ",
+											"description": "service title ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "fisrt service description",
+											"description": "service description",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "https://placehold.co/400",
+											"description": "service image (url)",
+											"type": "text"
+										},
+										{
+											"key": "tag[0]",
+											"value": "software",
+											"description": "service tags (array of strings)  index 0",
+											"type": "text"
+										},
+										{
+											"key": "tag[1]",
+											"value": "backend",
+											"description": "service tags (array of strings)  index 1",
+											"type": "text"
+										},
+										{
+											"key": "tag[2]",
+											"value": "frontend",
+											"description": "service tags (array of strings)  index 2",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"description": "service price ",
+											"type": "text"
+										},
+										{
+											"key": "deliveryTime",
+											"value": "7",
+											"description": "service deliveryTime ( number of days )",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "",
+											"description": "service discount (optical)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-aCIuZn/MtNj1Sa5sXNgI3benhao\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 18:58:25 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"You Already Have This Service\"\n}"
+						},
+						{
+							"name": "User Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "createdUser",
+											"value": "100",
+											"description": "service created user",
+											"type": "text"
+										},
+										{
+											"key": "featured",
+											"value": "true",
+											"description": "boolean (true or false )",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "first service 1",
+											"description": "service title ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "fisrt service description",
+											"description": "service description",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "https://placehold.co/400",
+											"description": "service image (url)",
+											"type": "text"
+										},
+										{
+											"key": "tag[0]",
+											"value": "software",
+											"description": "service tags (array of strings)  index 0",
+											"type": "text"
+										},
+										{
+											"key": "tag[1]",
+											"value": "backend",
+											"description": "service tags (array of strings)  index 1",
+											"type": "text"
+										},
+										{
+											"key": "tag[2]",
+											"value": "frontend",
+											"description": "service tags (array of strings)  index 2",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"description": "service price ",
+											"type": "text"
+										},
+										{
+											"key": "deliveryTime",
+											"value": "7",
+											"description": "service deliveryTime ( number of days )",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "",
+											"description": "service discount (optical)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-aEMLVknEOo1R/mOhAcXHM4AC/Tg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 18:59:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"User Not Found\"\n}"
+						},
+						{
+							"name": "Category Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "createdUser",
+											"value": "1",
+											"description": "service created user",
+											"type": "text"
+										},
+										{
+											"key": "featured",
+											"value": "true",
+											"description": "boolean (true or false )",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "first service 2",
+											"description": "service title ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "fisrt service description",
+											"description": "service description",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "https://placehold.co/400",
+											"description": "service image (url)",
+											"type": "text"
+										},
+										{
+											"key": "tag[0]",
+											"value": "software",
+											"description": "service tags (array of strings)  index 0",
+											"type": "text"
+										},
+										{
+											"key": "tag[1]",
+											"value": "backend",
+											"description": "service tags (array of strings)  index 1",
+											"type": "text"
+										},
+										{
+											"key": "tag[2]",
+											"value": "frontend",
+											"description": "service tags (array of strings)  index 2",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"description": "service price ",
+											"type": "text"
+										},
+										{
+											"key": "deliveryTime",
+											"value": "7",
+											"description": "service deliveryTime ( number of days )",
+											"type": "text"
+										},
+										{
+											"key": "categId",
+											"value": "1",
+											"description": "category id ",
+											"type": "text"
+										},
+										{
+											"key": "subCategId",
+											"value": "",
+											"description": "sub category id (optical )",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "",
+											"description": "service discount (optical)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-OjhwJKcTdFNfBgxMUXGEG15jDr8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:21:02 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Category Not Found\"\n}"
+						},
+						{
+							"name": "Sub Category Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "createdUser",
+											"value": "1",
+											"description": "service created user",
+											"type": "text"
+										},
+										{
+											"key": "featured",
+											"value": "true",
+											"description": "boolean (true or false )",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "first service 2",
+											"description": "service title ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "fisrt service description",
+											"description": "service description",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "https://placehold.co/400",
+											"description": "service image (url)",
+											"type": "text"
+										},
+										{
+											"key": "tag[0]",
+											"value": "software",
+											"description": "service tags (array of strings)  index 0",
+											"type": "text"
+										},
+										{
+											"key": "tag[1]",
+											"value": "backend",
+											"description": "service tags (array of strings)  index 1",
+											"type": "text"
+										},
+										{
+											"key": "tag[2]",
+											"value": "frontend",
+											"description": "service tags (array of strings)  index 2",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"description": "service price ",
+											"type": "text"
+										},
+										{
+											"key": "deliveryTime",
+											"value": "7",
+											"description": "service deliveryTime ( number of days )",
+											"type": "text"
+										},
+										{
+											"key": "categId",
+											"value": "3",
+											"description": "category id ",
+											"type": "text"
+										},
+										{
+											"key": "subCategId",
+											"value": "1",
+											"description": "sub category id (optical )",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "",
+											"description": "service discount (optical)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3c-6oVRzg/RJE2uKQ6/uEA6IMa4enw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:23:02 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Sub Category Not Found\"\n}"
+						},
+						{
+							"name": "Done",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "createdUser",
+											"value": "1",
+											"description": "service created user",
+											"type": "text"
+										},
+										{
+											"key": "featured",
+											"value": "true",
+											"description": "boolean (true or false )",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "first service 2",
+											"description": "service title ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "fisrt service description",
+											"description": "service description",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "https://placehold.co/400",
+											"description": "service image (url)",
+											"type": "text"
+										},
+										{
+											"key": "tag[0]",
+											"value": "software",
+											"description": "service tags (array of strings)  index 0",
+											"type": "text"
+										},
+										{
+											"key": "tag[1]",
+											"value": "backend",
+											"description": "service tags (array of strings)  index 1",
+											"type": "text"
+										},
+										{
+											"key": "tag[2]",
+											"value": "frontend",
+											"description": "service tags (array of strings)  index 2",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"description": "service price ",
+											"type": "text"
+										},
+										{
+											"key": "deliveryTime",
+											"value": "7",
+											"description": "service deliveryTime ( number of days )",
+											"type": "text"
+										},
+										{
+											"key": "categId",
+											"value": "3",
+											"description": "category id ",
+											"type": "text"
+										},
+										{
+											"key": "subCategId",
+											"value": "3",
+											"description": "sub category id (optical )",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "",
+											"description": "service discount (optical)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "506"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1fa-wEa7d0rpkzUqQdTcX0tQ6EGkIFY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:23:28 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Service Created Successfully\",\n    \"data\": {\n        \"uuid\": \"1cfcb885-52b2-4e5d-ad61-1d47b20a5a51\",\n        \"dateFrom\": 1702495408462,\n        \"status\": \"pending\",\n        \"id\": 4,\n        \"createdUser\": 1,\n        \"featured\": true,\n        \"title\": \"first service 2\",\n        \"description\": \"fisrt service description\",\n        \"image\": \"https://placehold.co/400\",\n        \"tag\": \"[\\\"software\\\",\\\"backend\\\",\\\"frontend\\\"]\",\n        \"price\": 1000,\n        \"deliveryTime\": \"7\",\n        \"discount\": 0,\n        \"categId\": 3,\n        \"subCategId\": 3,\n        \"updatedAt\": \"2023-12-13T19:23:28.464Z\",\n        \"createdAt\": \"2023-12-13T19:23:28.464Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "10",
+									"description": "service  id ",
+									"type": "text"
+								},
+								{
+									"key": "createdUser",
+									"value": "100",
+									"description": "service created user",
+									"type": "text"
+								},
+								{
+									"key": "featured",
+									"value": "true",
+									"description": "boolean (true or false )",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "first service 1",
+									"description": "service title ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "fisrt service description",
+									"description": "service description",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "https://placehold.co/400",
+									"description": "service image (url)",
+									"type": "text"
+								},
+								{
+									"key": "tag[0]",
+									"value": "software",
+									"description": "service tags (array of strings)  index 0",
+									"type": "text"
+								},
+								{
+									"key": "tag[1]",
+									"value": "backend",
+									"description": "service tags (array of strings)  index 1",
+									"type": "text"
+								},
+								{
+									"key": "tag[2]",
+									"value": "frontend",
+									"description": "service tags (array of strings)  index 2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"description": "service price ",
+									"type": "text"
+								},
+								{
+									"key": "deliveryTime",
+									"value": "7",
+									"description": "service deliveryTime ( number of days )",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "",
+									"description": "service discount (optical) ( number)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/service",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Done",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "service  id ",
+											"type": "text"
+										},
+										{
+											"key": "createdUser",
+											"value": "100",
+											"description": "service created user",
+											"type": "text"
+										},
+										{
+											"key": "featured",
+											"value": "true",
+											"description": "boolean (true or false )",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "first service 1",
+											"description": "service title ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "fisrt service description",
+											"description": "service description",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "https://placehold.co/400",
+											"description": "service image (url)",
+											"type": "text"
+										},
+										{
+											"key": "tag[0]",
+											"value": "software",
+											"description": "service tags (array of strings)  index 0",
+											"type": "text"
+										},
+										{
+											"key": "tag[1]",
+											"value": "backend",
+											"description": "service tags (array of strings)  index 1",
+											"type": "text"
+										},
+										{
+											"key": "tag[2]",
+											"value": "frontend",
+											"description": "service tags (array of strings)  index 2",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"description": "service price ",
+											"type": "text"
+										},
+										{
+											"key": "deliveryTime",
+											"value": "7",
+											"description": "service deliveryTime ( number of days )",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "",
+											"description": "service discount (optical) ( number)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "663"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"297-rSFioq8JGkichFor0wUI28z7jX0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:04:38 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Service Updated Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"uuid\": \"9d109544-f55d-481d-b4f5-9a9d6b680779\",\n        \"discountFor\": null,\n        \"featured\": true,\n        \"title\": \"first service 1\",\n        \"description\": \"fisrt service description\",\n        \"image\": \"https://placehold.co/400\",\n        \"video\": null,\n        \"instructions\": null,\n        \"tag\": \"[\\\"software\\\",\\\"backend\\\",\\\"frontend\\\"]\",\n        \"price\": \"1000\",\n        \"deliveryTime\": \"7\",\n        \"discount\": 0,\n        \"dateFrom\": \"2023-12-13T18:55:51.000Z\",\n        \"dateTo\": null,\n        \"likes\": 0,\n        \"dislike\": 0,\n        \"favorite\": 0,\n        \"status\": \"pending\",\n        \"statusComment\": null,\n        \"rating\": null,\n        \"createdAt\": \"2023-12-13T18:55:51.000Z\",\n        \"updatedAt\": \"2023-12-13T19:04:38.919Z\",\n        \"createdUser\": 1,\n        \"categId\": null,\n        \"subCategId\": null\n    }\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "10",
+											"description": "service  id ",
+											"type": "text"
+										},
+										{
+											"key": "createdUser",
+											"value": "100",
+											"description": "service created user",
+											"type": "text"
+										},
+										{
+											"key": "featured",
+											"value": "true",
+											"description": "boolean (true or false )",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "first service 1",
+											"description": "service title ",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "fisrt service description",
+											"description": "service description",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "https://placehold.co/400",
+											"description": "service image (url)",
+											"type": "text"
+										},
+										{
+											"key": "tag[0]",
+											"value": "software",
+											"description": "service tags (array of strings)  index 0",
+											"type": "text"
+										},
+										{
+											"key": "tag[1]",
+											"value": "backend",
+											"description": "service tags (array of strings)  index 1",
+											"type": "text"
+										},
+										{
+											"key": "tag[2]",
+											"value": "frontend",
+											"description": "service tags (array of strings)  index 2",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"description": "service price ",
+											"type": "text"
+										},
+										{
+											"key": "deliveryTime",
+											"value": "7",
+											"description": "service deliveryTime ( number of days )",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "",
+											"description": "service discount (optical) ( number)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-ZZp+kmrmvgTO/sc+ulbtZnY7cvI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:04:53 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Service Not Found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "service  id ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/service",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "10",
+											"description": "service  id ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-ZZp+kmrmvgTO/sc+ulbtZnY7cvI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:06:00 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Service Not Found\"\n}"
+						},
+						{
+							"name": "Done",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "service  id ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-cvml52u53/OcpVxtNcqYCYPLQbY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:06:30 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Service Deleted Successfully \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Or Remove Like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "4",
+									"description": "service id ",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"description": "user id clicked like ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/service/add-remove-like",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"service",
+								"add-remove-like"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "service id ",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "1",
+											"description": "user id clicked like ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service/add-remove-like",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service",
+										"add-remove-like"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-ZZp+kmrmvgTO/sc+ulbtZnY7cvI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 19:11:31 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Service Not Found\"\n}"
+						},
+						{
+							"name": "Done",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "4",
+											"description": "service id ",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "1",
+											"description": "user id clicked like ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service/add-remove-like",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service",
+										"add-remove-like"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1135"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46f-Uqw5xPi144mthKakfTpLJDKnkWc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 20:09:57 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Successfully Added Like\",\n    \"data\": {\n        \"id\": 4,\n        \"uuid\": \"1cfcb885-52b2-4e5d-ad61-1d47b20a5a51\",\n        \"discountFor\": null,\n        \"featured\": true,\n        \"title\": \"first service 2\",\n        \"description\": \"fisrt service description\",\n        \"image\": \"https://placehold.co/400\",\n        \"video\": null,\n        \"instructions\": null,\n        \"tag\": \"\\\"[\\\\\\\"software\\\\\\\",\\\\\\\"backend\\\\\\\",\\\\\\\"frontend\\\\\\\"]\\\"\",\n        \"price\": 1000,\n        \"deliveryTime\": 7,\n        \"discount\": 0,\n        \"dateFrom\": \"2023-12-13T19:23:28.000Z\",\n        \"dateTo\": null,\n        \"status\": \"pending\",\n        \"statusComment\": null,\n        \"rating\": null,\n        \"createdAt\": \"2023-12-13T19:23:28.000Z\",\n        \"updatedAt\": \"2023-12-13T19:23:28.000Z\",\n        \"createdUser\": 1,\n        \"categId\": 3,\n        \"subCategId\": 3,\n        \"likes\": [\n            {\n                \"id\": 1,\n                \"userId\": 1,\n                \"serviceId\": 4\n            }\n        ],\n        \"dislikes\": [],\n        \"favorites\": [],\n        \"category\": {\n            \"id\": 3,\n            \"uuid\": \"d7d2fe96-49ab-41f6-86ed-60982a5576e1\",\n            \"oldId\": null,\n            \"title\": \"software2\",\n            \"desc\": \"software description \",\n            \"createdAt\": \"2023-12-13T18:31:49.000Z\",\n            \"updatedAt\": \"2023-12-13T18:33:09.000Z\"\n        },\n        \"subCategory\": {\n            \"id\": 3,\n            \"uuid\": \"b54e09f7-cbd9-4c2a-9e4a-dc006cec4774\",\n            \"title\": \"software subcat1\",\n            \"desc\": \"software subcat description  \",\n            \"createdAt\": \"2023-12-13T18:44:20.000Z\",\n            \"updatedAt\": \"2023-12-13T18:44:20.000Z\",\n            \"categId\": 3\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Or Remove DisLike",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "4",
+									"description": "service id ",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"description": "user id clicked like ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/service/add-remove-dislike",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"service",
+								"add-remove-dislike"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "service id ",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "1",
+											"description": "user id clicked like ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service/add-remove-dislike",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service",
+										"add-remove-dislike"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-ZZp+kmrmvgTO/sc+ulbtZnY7cvI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 20:11:58 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Service Not Found\"\n}"
+						},
+						{
+							"name": "Done",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "4",
+											"description": "service id ",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "1",
+											"description": "user id clicked like ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service/add-remove-dislike",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service",
+										"add-remove-dislike"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1138"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"472-hSUTp5DX9pXId9jGCvPs7gLFcss\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 20:12:39 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Successfully Added dislike\",\n    \"data\": {\n        \"id\": 4,\n        \"uuid\": \"1cfcb885-52b2-4e5d-ad61-1d47b20a5a51\",\n        \"discountFor\": null,\n        \"featured\": true,\n        \"title\": \"first service 2\",\n        \"description\": \"fisrt service description\",\n        \"image\": \"https://placehold.co/400\",\n        \"video\": null,\n        \"instructions\": null,\n        \"tag\": \"\\\"[\\\\\\\"software\\\\\\\",\\\\\\\"backend\\\\\\\",\\\\\\\"frontend\\\\\\\"]\\\"\",\n        \"price\": 1000,\n        \"deliveryTime\": 7,\n        \"discount\": 0,\n        \"dateFrom\": \"2023-12-13T19:23:28.000Z\",\n        \"dateTo\": null,\n        \"status\": \"pending\",\n        \"statusComment\": null,\n        \"rating\": null,\n        \"createdAt\": \"2023-12-13T19:23:28.000Z\",\n        \"updatedAt\": \"2023-12-13T19:23:28.000Z\",\n        \"createdUser\": 1,\n        \"categId\": 3,\n        \"subCategId\": 3,\n        \"likes\": [],\n        \"dislikes\": [\n            {\n                \"id\": 2,\n                \"userId\": 1,\n                \"serviceId\": 4\n            }\n        ],\n        \"favorites\": [],\n        \"category\": {\n            \"id\": 3,\n            \"uuid\": \"d7d2fe96-49ab-41f6-86ed-60982a5576e1\",\n            \"oldId\": null,\n            \"title\": \"software2\",\n            \"desc\": \"software description \",\n            \"createdAt\": \"2023-12-13T18:31:49.000Z\",\n            \"updatedAt\": \"2023-12-13T18:33:09.000Z\"\n        },\n        \"subCategory\": {\n            \"id\": 3,\n            \"uuid\": \"b54e09f7-cbd9-4c2a-9e4a-dc006cec4774\",\n            \"title\": \"software subcat1\",\n            \"desc\": \"software subcat description  \",\n            \"createdAt\": \"2023-12-13T18:44:20.000Z\",\n            \"updatedAt\": \"2023-12-13T18:44:20.000Z\",\n            \"categId\": 3\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Or Remove Favorite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "4",
+									"description": "service id ",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "2",
+									"description": "user id clicked like ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/service/add-remove-favorite",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"service",
+								"add-remove-favorite"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "41",
+											"description": "service id ",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "1",
+											"description": "user id clicked like ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/service/add-remove-favorite",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"service",
+										"add-remove-favorite"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-powered-by",
+									"value": "Virus24"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-ZZp+kmrmvgTO/sc+ulbtZnY7cvI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 13 Dec 2023 20:23:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Service Not Found\"\n}"
+						}
+					]
 				}
 			]
 		},
