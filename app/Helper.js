@@ -152,7 +152,12 @@ class Helper {
         return set1.size === set2.size && [...set1].every((value) => set2.has(value));
     }
 
-    //--------------------------------------------- needed
+    /**
+     * Validates a date string in the 'MM-DD-YYYY' format.
+     *
+     * @param {string} inputDateString - The date string to be validated.
+     * @return {boolean} Returns true if the date is valid, otherwise false.
+     */
     static validateDate(inputDateString) {
         // Define a regular expression for the 'MM-DD-YYYY' format
         const dateRegex = /^(\d{2})-(\d{2})-(\d{4})$/;
@@ -192,6 +197,11 @@ class Helper {
         return true;
     }
 
+    /**
+     * Returns the current date formatted as 'MM-DD-YYYY'.
+     *
+     * @return {string} The formatted date string.
+     */
     static getCurrentDate() {
         const currentDate = new Date();
 
@@ -206,6 +216,13 @@ class Helper {
         return formattedDate;
     }
 
+    /**
+     * Compares two dates and returns true if the first date is greater than the second date.
+     *
+     * @param {string} date1 - The first date to compare in the format "month-day-year".
+     * @param {string} date2 - The second date to compare in the format "month-day-year".
+     * @return {boolean} Returns true if the first date is greater than the second date, otherwise false.
+     */
     static compareTwoDates(date1, date2) {
         let firstDate = date1.split("-")
         let secondDate = date2.split("-")
@@ -223,7 +240,6 @@ class Helper {
         }
         return true
     }
-
 }
 
 module.exports = Helper;
