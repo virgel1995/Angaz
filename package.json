@@ -1,0 +1,72 @@
+{
+  "name": "v1.0",
+  "version": "1.0.0",
+  "description": "api v1.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "trace": "node --trace-warnings app.js"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-exception-handler": "^1.3.70",
+    "express-rate-limit": "^7.1.5",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.5",
+    "nodemailer": "^6.9.4",
+    "pino": "^8.16.2",
+    "pino-pretty": "^10.2.3",
+    "sequelize": "^6.35.1",
+    "socket.io": "^4.7.2",
+    "swagger-ui-dist": "^5.10.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^2.8.0"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x",
+    "yarn": "1.x"
+  },
+  "keywords": [
+    "api",
+    "api v1.0",
+    "api v1.0.0",
+    "nodejs",
+    "nodejs api",
+    "nodejs api v1.0",
+    "nodejs api v1.0.0",
+    "expressjs",
+    "expressjs api",
+    "expressjs api v1.0",
+    "expressjs api v1.0.0"
+  ],
+  "contributors": [
+    "Sabry Dawood",
+    "Marwan"
+  ],
+  "authors": [
+    {
+      "name": "Sabry Dawood",
+      "email": "kazouya25@gmail.com"
+    },
+    {
+      "name": "Marwan",
+      "email": "Marwan@gmail.com"
+    }
+  ],
+  "license": "ISC"
+}

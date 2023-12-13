@@ -1,0 +1,6 @@
+{
+ "watch": ["." , ".env"],
+ "ignore": ["./public"],
+ "ext": "js",
+ "exec": "node app.js"
+}

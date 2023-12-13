@@ -1,0 +1,2500 @@
+{
+	"info": {
+		"_postman_id": "03eaed97-353e-44bf-9246-1b06dd2a6d5d",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15135139",
+		"_collection_link": "https://virus24-team.postman.co/workspace/Engaz~c713b320-8af8-434e-8ccc-1137f567f8eb/collection/15135139-03eaed97-353e-44bf-9246-1b06dd2a6d5d?action=share&source=collection_link&creator=15135139"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "user1",
+											"description": "admin username",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345",
+											"description": "password of user",
+											"type": "text"
+										},
+										{
+											"key": "level",
+											"value": "super",
+											"description": "[super,high,mid,low]",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "tsest@me.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/auth",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "sabry",
+													"description": "admin username",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "password of user",
+													"type": "text"
+												},
+												{
+													"key": "level",
+													"value": "super",
+													"description": "[super,high,mid,low]",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "tsest@me.com",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "HTL Academy"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "351"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"15f-bwbyINuVWcKxO+4Bv8+sH8TERyQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 19:49:09 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Admin Added Successfully\",\n    \"data\": {\n        \"uuid\": \"fe12d661-bd4e-4001-ab93-5cbdde40e328\",\n        \"profilePic\": \"/images/user.svg\",\n        \"id\": 4,\n        \"username\": \"sabry\",\n        \"password\": \"U2FsdGVkX18p6KPYRAB/cVA48TQ1dN/ll82byXWa6dI=\",\n        \"level\": \"super\",\n        \"email\": \"tsest@me.com\",\n        \"updatedAt\": \"2023-12-05T19:49:09.020Z\",\n        \"createdAt\": \"2023-12-05T19:49:09.020Z\"\n    }\n}"
+								},
+								{
+									"name": "Already Exist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "sabry",
+													"description": "admin username",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "password of user",
+													"type": "text"
+												},
+												{
+													"key": "level",
+													"value": "super",
+													"description": "[super,high,mid,low]",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "tsest@me.com",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "HTL Academy"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "57"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"39-hK+8mZ+vZ6p8XmPq+SItYLtsrtM\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 19:56:15 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"Admin Already Exist\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "sabry",
+											"description": "admin username",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"description": "password of user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/admin/auth",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "sabry",
+													"description": "admin username",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "password of user",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "HTL Academy"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "559"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"22f-K+EC7pAjYdJ3cswRBRmPKesZByk\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 19:52:11 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Welcome sabry\",\n    \"data\": {\n        \"id\": 4,\n        \"uuid\": \"fe12d661-bd4e-4001-ab93-5cbdde40e328\",\n        \"username\": \"sabry\",\n        \"email\": \"tsest@me.com\",\n        \"profilePic\": \"/images/user.svg\",\n        \"level\": \"super\",\n        \"createdAt\": \"2023-12-05T19:49:09.000Z\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXVpZCI6ImZlMTJkNjYxLWJkNGUtNDAwMS1hYjkzLTVjYmRkZTQwZTMyOCIsInVzZXJuYW1lIjoic2FicnkiLCJlbWFpbCI6InRzZXN0QG1lLmNvbSIsImxldmVsIjoic3VwZXIiLCJjcmVhdGVkQXQiOiIyMDIzLTEyLTA1VDE5OjQ5OjA5LjAwMFoiLCJpYXQiOjE3MDE4MDU5MzF9.Z4kadwmqf0v0_ghjiIXZ-Z5x4RhxucjQXjD0mcdx9-s\"\n    }\n}"
+								},
+								{
+									"name": "Invalid password",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "sabry",
+													"description": "admin username",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "1234",
+													"description": "password of user",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "HTL Academy"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "54"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"36-TuU4jt9t7kxyr1p5puPP8sSbZ3Q\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 19:52:51 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Invalid password\",\n    \"error\": true,\n    \"code\": 400\n}"
+								},
+								{
+									"name": "not Exist",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "sabry2",
+													"description": "admin username",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "password of user",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "HTL Academy"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "56"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"38-rgb/YCo6zfr5KJJVltZA4lM63wQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 05 Dec 2023 19:53:24 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"Admin is not Exist\"\n}"
+								}
+							]
+						},
+						{
+							"name": "find All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_URL}}/admin/auth",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"admin",
+										"auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APP_URL}}/admin/auth",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"admin",
+												"auth"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "HTL Academy"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "427"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1ab-aocZwqLhom2WVd4Oo0n/M8pGDhw\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 09:31:54 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Admins Data\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"uuid\": \"fe12d661-bd4e-4001-ab93-5cbdde40e328\",\n            \"username\": \"sabry\",\n            \"email\": \"tsest@me.com\",\n            \"profilePic\": \"/images/user.svg\",\n            \"level\": \"super\",\n            \"createdAt\": \"2023-12-05T19:49:09.000Z\"\n        },\n        {\n            \"id\": 5,\n            \"uuid\": \"1edb2dfa-c005-48c0-a681-8bebf2d8db02\",\n            \"username\": \"user1\",\n            \"email\": \"sabry@me.com\",\n            \"profilePic\": \"/images/user.svg\",\n            \"level\": \"super\",\n            \"createdAt\": \"2023-12-05T20:33:09.000Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "method",
+											"value": "kaz@gmail.com",
+											"description": "user username or email",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345",
+											"description": "user password ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/user/auth/signin",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"user",
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "method",
+													"value": "kaz@gmail.coms",
+													"description": "user username or email",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "user password ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/auth/signin",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"auth",
+												"signin"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "60"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3c-E+7FTJqbPlDX0HVTPrkaSoOKpiE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 11:32:48 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 404,\n    \"message\": \"No Creadintails Found \"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "method",
+													"value": "kaz@gmail.com",
+													"description": "user username or email",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "user password ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/auth/signin",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"auth",
+												"signin"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "874"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"36a-gtH+43gR1fIo2bEL0TzCPXV20NQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 17:57:09 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 200,\n    \"message\": \"Welcome sabry1995\",\n    \"data\": {\n        \"id\": 11,\n        \"uuid\": \"ee5e2810-8c21-4cde-83cb-b1d59bb9140a\",\n        \"username\": \"sabry1995\",\n        \"email\": \"kaz@gmail.com\",\n        \"mobile\": \"201069017890\",\n        \"role\": \"freelancer\",\n        \"profilePic\": null,\n        \"createdAt\": \"2023-12-06T10:52:09.000Z\",\n        \"access_token\": {\n            \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInV1aWQiOiJlZTVlMjgxMC04YzIxLTRjZGUtODNjYi1iMWQ1OWJiOTE0MGEiLCJ1c2VybmFtZSI6InNhYnJ5MTk5NSIsImVtYWlsIjoia2F6QGdtYWlsLmNvbSIsIm1vYmlsZSI6IjIwMTA2OTAxNzg5MCIsInJvbGUiOiJmcmVlbGFuY2VyIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wNlQxMDo1MjowOS4wMDBaIiwiaWF0IjoxNzAxODg1NDI5LCJleHAiOjE3MDE5NzE4Mjl9.3RXb_af_WP80XWHDSstXkOy9IMF6W0fHie7sLqLLx-g\",\n            \"validFor\": \"1 day\"\n        },\n        \"refresh_token\": {\n            \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTcwMTg4NTQyOSwiZXhwIjoxNzA0NDc3NDI5fQ.-1mM84woBZiBHSBJYjQmdY29Jikm2RZXhGsfgOweI0I\",\n            \"validFor\": \"30 days\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "sabry1993",
+											"description": "username of user",
+											"type": "text"
+										},
+										{
+											"key": "firstName",
+											"value": "sabry",
+											"description": "user first name",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "dawood",
+											"description": "user last name",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "kazouya25@gmail.com",
+											"description": "user email",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345",
+											"description": "user password",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "201069017890",
+											"description": "user mobile",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "freelancer",
+											"description": "client or freelancer",
+											"type": "text"
+										},
+										{
+											"key": "redirect",
+											"value": "http://localhost:5173",
+											"description": "the url will redirect  to it after varify email",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/user/auth/sign-up",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"user",
+										"auth",
+										"sign-up"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Already Exist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "sabry1995",
+													"description": "username of user",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "sabry",
+													"description": "user first name",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "dawood",
+													"description": "user last name",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "kaz@gmail.com",
+													"description": "user email",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "user password",
+													"type": "text"
+												},
+												{
+													"key": "mobile",
+													"value": "201069017890",
+													"description": "user mobile",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "male",
+													"description": "male or female",
+													"type": "text"
+												},
+												{
+													"key": "role",
+													"value": "freelancer",
+													"description": "client or freelancer",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/auth/sign-up",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"auth",
+												"sign-up"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "56"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"38-eJ3hnHvMToorkRzU2cwNVwICOPw\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 10:57:42 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": true,\n    \"code\": 400,\n    \"message\": \"User Already Exist\"\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "sabry1994",
+													"description": "username of user",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "sabry",
+													"description": "user first name",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "dawood",
+													"description": "user last name",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "kaz1@gmail.com",
+													"description": "user email",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "user password",
+													"type": "text"
+												},
+												{
+													"key": "mobile",
+													"value": "201069017890",
+													"description": "user mobile",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "male",
+													"description": "male or female",
+													"type": "text"
+												},
+												{
+													"key": "role",
+													"value": "freelancer",
+													"description": "client or freelancer",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/auth/sign-up",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"auth",
+												"sign-up"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "272"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"110-sKZWmI6VR+tfmg1QASjZKpsdsZ8\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 10:58:16 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": false,\n    \"code\": 201,\n    \"message\": \"User Added Successfully\",\n    \"data\": {\n        \"id\": 12,\n        \"uuid\": \"e0824890-b758-4939-9e0f-f1f1f3dcf9b3\",\n        \"username\": \"sabry1994\",\n        \"email\": \"kaz1@gmail.com\",\n        \"mobile\": \"201069017890\",\n        \"gender\": \"male\",\n        \"role\": \"freelancer\",\n        \"createdAt\": \"2023-12-06T10:58:16.374Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Settings",
+					"item": [
+						{
+							"name": "Update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "1",
+											"description": "user id ( required )",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "sabry19956",
+											"description": "username of user",
+											"type": "text"
+										},
+										{
+											"key": "firstName",
+											"value": "sabry",
+											"description": "user first name",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "dawood",
+											"description": "user last name",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"description": "user password",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "201069017890",
+											"description": "user mobile",
+											"type": "text"
+										},
+										{
+											"key": "emailNotification",
+											"value": "true",
+											"description": "true / false",
+											"type": "text"
+										},
+										{
+											"key": "aboutMe",
+											"value": "hello all users ",
+											"description": "user bio",
+											"type": "text"
+										},
+										{
+											"key": "birthDate",
+											"value": "1-1-1995",
+											"description": "user birth day",
+											"type": "text"
+										},
+										{
+											"key": "profilePic",
+											"value": "",
+											"description": "user profile pic",
+											"type": "text"
+										},
+										{
+											"key": "skills",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/user/settings/update",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"user",
+										"settings",
+										"update"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "1",
+													"description": "user id ( required )",
+													"type": "text"
+												},
+												{
+													"key": "username",
+													"value": "sabry1993",
+													"description": "username of user",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "sabry",
+													"description": "user first name",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "dawood",
+													"description": "user last name",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345",
+													"description": "user password",
+													"type": "text"
+												},
+												{
+													"key": "mobile",
+													"value": "201069017890",
+													"description": "user mobile",
+													"type": "text"
+												},
+												{
+													"key": "redirect",
+													"value": "http://localhost:5173",
+													"description": "the url will redirect  to it after varify email",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/settings/update",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"settings",
+												"update"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "329"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"149-XGSDF3TvKildbNRKFioKpXL5paM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 18:28:06 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User Updated\",\n    \"error\": false,\n    \"code\": 200,\n    \"data\": {\n        \"id\": 1,\n        \"uuid\": \"f4cac0f6-0f7e-4980-a9cd-a9c448f00b49\",\n        \"username\": \"sabry1993\",\n        \"firstName\": \"sabry\",\n        \"lastName\": \"dawood\",\n        \"mobile\": \"201069017890\",\n        \"email\": \"Ocie_DuBuque70@hotmail.com\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-12-05T22:05:33.000Z\",\n        \"updatedAt\": \"2023-12-06T18:28:06.437Z\"\n    }\n}"
+								},
+								{
+									"name": "Username Already Exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "1",
+													"description": "user id ( required )",
+													"type": "text"
+												},
+												{
+													"key": "username",
+													"value": "sabry1995",
+													"description": "username of user",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "sabry",
+													"description": "user first name",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "dawood",
+													"description": "user last name",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123456",
+													"description": "user password",
+													"type": "text"
+												},
+												{
+													"key": "mobile",
+													"value": "201069017890",
+													"description": "user mobile",
+													"type": "text"
+												},
+												{
+													"key": "redirect",
+													"value": "http://localhost:5173",
+													"description": "the url will redirect  to it after varify email",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/settings/update",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"settings",
+												"update"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "61"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3d-TjcGGnzZHrcIzvOkJAisXfyEDSY\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 18:32:57 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Username Already Exists\",\n    \"error\": true,\n    \"code\": 400\n}"
+								},
+								{
+									"name": "User Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "19",
+													"description": "user id ( required )",
+													"type": "text"
+												},
+												{
+													"key": "username",
+													"value": "sabry1995",
+													"description": "username of user",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "sabry",
+													"description": "user first name",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "dawood",
+													"description": "user last name",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123456",
+													"description": "user password",
+													"type": "text"
+												},
+												{
+													"key": "mobile",
+													"value": "201069017890",
+													"description": "user mobile",
+													"type": "text"
+												},
+												{
+													"key": "redirect",
+													"value": "http://localhost:5173",
+													"description": "the url will redirect  to it after varify email",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/settings/update",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"settings",
+												"update"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "52"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"34-LKiwQr14jW+0A52VdCEV4XsaM80\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 18:33:22 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User Not Found\",\n    \"error\": true,\n    \"code\": 404\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "150",
+											"description": "user id ( required )",
+											"type": "text"
+										},
+										{
+											"key": "redirect",
+											"value": "http://localhost:5173",
+											"description": "the url will redirect  to it after varify email",
+											"type": "text"
+										},
+										{
+											"key": "new_email",
+											"value": "kaz5@gmail.com",
+											"description": "the new email to change",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_URL}}/user/settings/update-email",
+									"host": [
+										"{{APP_URL}}"
+									],
+									"path": [
+										"user",
+										"settings",
+										"update-email"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Email Already Exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "1",
+													"description": "user id ( required )",
+													"type": "text"
+												},
+												{
+													"key": "redirect",
+													"value": "http://localhost:5173",
+													"description": "the url will redirect  to it after varify email",
+													"type": "text"
+												},
+												{
+													"key": "new_email",
+													"value": "kaz@gmail.com",
+													"description": "the new email to change",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/settings/update-email",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"settings",
+												"update-email"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "58"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3a-1qR5PlVthCFxuXAsS3Wg3J/2YKM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 18:36:49 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Email Already Exists\",\n    \"error\": true,\n    \"code\": 400\n}"
+								},
+								{
+									"name": "Done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "15",
+													"description": "user id ( required )",
+													"type": "text"
+												},
+												{
+													"key": "redirect",
+													"value": "http://localhost:5173",
+													"description": "the url will redirect  to it after varify email",
+													"type": "text"
+												},
+												{
+													"key": "new_email",
+													"value": "kaz5@gmail.com",
+													"description": "the new email to change",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/settings/update-email",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"settings",
+												"update-email"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "159"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"9f-U3VKfAuDpcvvcdgeMJkTWNAFaJM\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 18:37:50 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Please Check Your Email\",\n    \"error\": false,\n    \"code\": 200,\n    \"data\": {\n        \"userId\": 15,\n        \"email\": \"kazouya25@gmail.com\",\n        \"code\": \"d6cc77ff-3bb5-414a-89d6-7e576b9b2063\"\n    }\n}"
+								},
+								{
+									"name": "User Not Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "150",
+													"description": "user id ( required )",
+													"type": "text"
+												},
+												{
+													"key": "redirect",
+													"value": "http://localhost:5173",
+													"description": "the url will redirect  to it after varify email",
+													"type": "text"
+												},
+												{
+													"key": "new_email",
+													"value": "kaz5@gmail.com",
+													"description": "the new email to change",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{APP_URL}}/user/settings/update-email",
+											"host": [
+												"{{APP_URL}}"
+											],
+											"path": [
+												"user",
+												"settings",
+												"update-email"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Virus24"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+										},
+										{
+											"key": "Access-Control-Max-Age",
+											"value": "86400"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "no-referrer"
+										},
+										{
+											"key": "Cross-Origin-Embedder-Policy",
+											"value": "require-corp"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Resource-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "52"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"34-LKiwQr14jW+0A52VdCEV4XsaM80\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Dec 2023 18:38:46 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"User Not Found\",\n    \"error\": true,\n    \"code\": 404\n}"
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{USER_TOKEN}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "WebHooks",
+			"item": [
+				{
+					"name": "test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "gsgsg",
+									"value": "shgsghsgsgsg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{APP_URL}}/webhook",
+							"host": [
+								"{{APP_URL}}"
+							],
+							"path": [
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{APP_URL}}/status",
+					"host": [
+						"{{APP_URL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APP_URL",
+			"value": "localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "ADMIN_TOKEN",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "USER_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInV1aWQiOiJlZTVlMjgxMC04YzIxLTRjZGUtODNjYi1iMWQ1OWJiOTE0MGEiLCJ1c2VybmFtZSI6InNhYnJ5MTk5NSIsImVtYWlsIjoia2F6QGdtYWlsLmNvbSIsIm1vYmlsZSI6IjIwMTA2OTAxNzg5MCIsInJvbGUiOiJmcmVlbGFuY2VyIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wNlQxMDo1MjowOS4wMDBaIiwiaWF0IjoxNzAxODk0MTA2LCJleHAiOjE3MDQ0ODYxMDZ9.p5rG17jYstzl7FbmwLIx8CNjxDo0R12eh2ELYL6P_No",
+			"type": "string"
+		}
+	]
+}

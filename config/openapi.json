@@ -1,0 +1,2445 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Backend",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Admin"
+        },
+        {
+            "name": "Admin > Auth"
+        },
+        {
+            "name": "Users"
+        },
+        {
+            "name": "Users > Auth"
+        },
+        {
+            "name": "Users > Settings"
+        },
+        {
+            "name": "WebHooks"
+        }
+    ],
+    "paths": {
+        "/admin/auth": {
+            "post": {
+                "tags": [
+                    "Admin > Auth"
+                ],
+                "summary": "Create",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "description": "admin username",
+                                        "example": "user1"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "description": "password of user",
+                                        "example": "12345"
+                                    },
+                                    "level": {
+                                        "type": "string",
+                                        "description": "[super,high,mid,low]",
+                                        "example": "super"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "tsest@me.com"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "HTL Academy"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "351"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"15f-bwbyINuVWcKxO+4Bv8+sH8TERyQ\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 05 Dec 2023 19:49:09 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": false,
+                                    "code": 200,
+                                    "message": "Admin Added Successfully",
+                                    "data": {
+                                        "uuid": "fe12d661-bd4e-4001-ab93-5cbdde40e328",
+                                        "profilePic": "/images/user.svg",
+                                        "id": 4,
+                                        "username": "sabry",
+                                        "password": "U2FsdGVkX18p6KPYRAB/cVA48TQ1dN/ll82byXWa6dI=",
+                                        "level": "super",
+                                        "email": "tsest@me.com",
+                                        "updatedAt": "2023-12-05T19:49:09.020Z",
+                                        "createdAt": "2023-12-05T19:49:09.020Z"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "HTL Academy"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "57"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"39-hK+8mZ+vZ6p8XmPq+SItYLtsrtM\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 05 Dec 2023 19:56:15 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": true,
+                                    "code": 400,
+                                    "message": "Admin Already Exist"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Admin > Auth"
+                ],
+                "summary": "Login",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "description": "admin username",
+                                        "example": "sabry"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "description": "password of user",
+                                        "example": "1234"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "HTL Academy"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "559"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"22f-K+EC7pAjYdJ3cswRBRmPKesZByk\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 05 Dec 2023 19:52:11 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": false,
+                                    "code": 200,
+                                    "message": "Welcome sabry",
+                                    "data": {
+                                        "id": 4,
+                                        "uuid": "fe12d661-bd4e-4001-ab93-5cbdde40e328",
+                                        "username": "sabry",
+                                        "email": "tsest@me.com",
+                                        "profilePic": "/images/user.svg",
+                                        "level": "super",
+                                        "createdAt": "2023-12-05T19:49:09.000Z",
+                                        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXVpZCI6ImZlMTJkNjYxLWJkNGUtNDAwMS1hYjkzLTVjYmRkZTQwZTMyOCIsInVzZXJuYW1lIjoic2FicnkiLCJlbWFpbCI6InRzZXN0QG1lLmNvbSIsImxldmVsIjoic3VwZXIiLCJjcmVhdGVkQXQiOiIyMDIzLTEyLTA1VDE5OjQ5OjA5LjAwMFoiLCJpYXQiOjE3MDE4MDU5MzF9.Z4kadwmqf0v0_ghjiIXZ-Z5x4RhxucjQXjD0mcdx9-s"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "HTL Academy"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "54"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"36-TuU4jt9t7kxyr1p5puPP8sSbZ3Q\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 05 Dec 2023 19:52:51 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "Invalid password",
+                                    "error": true,
+                                    "code": 400
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "HTL Academy"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "56"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"38-rgb/YCo6zfr5KJJVltZA4lM63wQ\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Tue, 05 Dec 2023 19:53:24 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": true,
+                                    "code": 404,
+                                    "message": "Admin is not Exist"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Admin > Auth"
+                ],
+                "summary": "find All",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "HTL Academy"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "427"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"1ab-aocZwqLhom2WVd4Oo0n/M8pGDhw\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 09:31:54 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": false,
+                                    "code": 200,
+                                    "message": "Admins Data",
+                                    "data": [
+                                        {
+                                            "id": 4,
+                                            "uuid": "fe12d661-bd4e-4001-ab93-5cbdde40e328",
+                                            "username": "sabry",
+                                            "email": "tsest@me.com",
+                                            "profilePic": "/images/user.svg",
+                                            "level": "super",
+                                            "createdAt": "2023-12-05T19:49:09.000Z"
+                                        },
+                                        {
+                                            "id": 5,
+                                            "uuid": "1edb2dfa-c005-48c0-a681-8bebf2d8db02",
+                                            "username": "user1",
+                                            "email": "sabry@me.com",
+                                            "profilePic": "/images/user.svg",
+                                            "level": "super",
+                                            "createdAt": "2023-12-05T20:33:09.000Z"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/auth/signin": {
+            "post": {
+                "tags": [
+                    "Users > Auth"
+                ],
+                "summary": "Login",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "method": {
+                                        "type": "string",
+                                        "description": "user username or email",
+                                        "example": "kaz@gmail.com"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "description": "user password ",
+                                        "example": "12345"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "874"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"36a-gtH+43gR1fIo2bEL0TzCPXV20NQ\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 17:57:09 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": false,
+                                    "code": 200,
+                                    "message": "Welcome sabry1995",
+                                    "data": {
+                                        "id": 11,
+                                        "uuid": "ee5e2810-8c21-4cde-83cb-b1d59bb9140a",
+                                        "username": "sabry1995",
+                                        "email": "kaz@gmail.com",
+                                        "mobile": "201069017890",
+                                        "role": "freelancer",
+                                        "profilePic": null,
+                                        "createdAt": "2023-12-06T10:52:09.000Z",
+                                        "access_token": {
+                                            "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInV1aWQiOiJlZTVlMjgxMC04YzIxLTRjZGUtODNjYi1iMWQ1OWJiOTE0MGEiLCJ1c2VybmFtZSI6InNhYnJ5MTk5NSIsImVtYWlsIjoia2F6QGdtYWlsLmNvbSIsIm1vYmlsZSI6IjIwMTA2OTAxNzg5MCIsInJvbGUiOiJmcmVlbGFuY2VyIiwiY3JlYXRlZEF0IjoiMjAyMy0xMi0wNlQxMDo1MjowOS4wMDBaIiwiaWF0IjoxNzAxODg1NDI5LCJleHAiOjE3MDE5NzE4Mjl9.3RXb_af_WP80XWHDSstXkOy9IMF6W0fHie7sLqLLx-g",
+                                            "validFor": "1 day"
+                                        },
+                                        "refresh_token": {
+                                            "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTcwMTg4NTQyOSwiZXhwIjoxNzA0NDc3NDI5fQ.-1mM84woBZiBHSBJYjQmdY29Jikm2RZXhGsfgOweI0I",
+                                            "validFor": "30 days"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "60"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"3c-E+7FTJqbPlDX0HVTPrkaSoOKpiE\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 11:32:48 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": true,
+                                    "code": 404,
+                                    "message": "No Creadintails Found "
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/auth/sign-up": {
+            "post": {
+                "tags": [
+                    "Users > Auth"
+                ],
+                "summary": "Register",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "description": "username of user",
+                                        "example": "sabry1993"
+                                    },
+                                    "firstName": {
+                                        "type": "string",
+                                        "description": "user first name",
+                                        "example": "sabry"
+                                    },
+                                    "lastName": {
+                                        "type": "string",
+                                        "description": "user last name",
+                                        "example": "dawood"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "description": "user email",
+                                        "example": "kazouya25@gmail.com"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "description": "user password",
+                                        "example": "12345"
+                                    },
+                                    "mobile": {
+                                        "type": "integer",
+                                        "description": "user mobile",
+                                        "example": "201069017890"
+                                    },
+                                    "role": {
+                                        "type": "string",
+                                        "description": "client or freelancer",
+                                        "example": "freelancer"
+                                    },
+                                    "redirect": {
+                                        "type": "string",
+                                        "description": "the url will redirect  to it after varify email",
+                                        "example": "http://localhost:5173"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "272"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"110-sKZWmI6VR+tfmg1QASjZKpsdsZ8\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 10:58:16 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": false,
+                                    "code": 201,
+                                    "message": "User Added Successfully",
+                                    "data": {
+                                        "id": 12,
+                                        "uuid": "e0824890-b758-4939-9e0f-f1f1f3dcf9b3",
+                                        "username": "sabry1994",
+                                        "email": "kaz1@gmail.com",
+                                        "mobile": "201069017890",
+                                        "gender": "male",
+                                        "role": "freelancer",
+                                        "createdAt": "2023-12-06T10:58:16.374Z"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "56"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"38-eJ3hnHvMToorkRzU2cwNVwICOPw\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 10:57:42 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": true,
+                                    "code": 400,
+                                    "message": "User Already Exist"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/settings/update": {
+            "post": {
+                "tags": [
+                    "Users > Settings"
+                ],
+                "summary": "Update",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userId": {
+                                        "type": "integer",
+                                        "description": "user id ( required )",
+                                        "example": "1"
+                                    },
+                                    "username": {
+                                        "type": "string",
+                                        "description": "username of user",
+                                        "example": "sabry19956"
+                                    },
+                                    "firstName": {
+                                        "type": "string",
+                                        "description": "user first name",
+                                        "example": "sabry"
+                                    },
+                                    "lastName": {
+                                        "type": "string",
+                                        "description": "user last name",
+                                        "example": "dawood"
+                                    },
+                                    "password": {
+                                        "type": "integer",
+                                        "description": "user password",
+                                        "example": "123456"
+                                    },
+                                    "mobile": {
+                                        "type": "integer",
+                                        "description": "user mobile",
+                                        "example": "201069017890"
+                                    },
+                                    "emailNotification": {
+                                        "type": "boolean",
+                                        "description": "true / false",
+                                        "example": "true"
+                                    },
+                                    "aboutMe": {
+                                        "type": "string",
+                                        "description": "user bio",
+                                        "example": "hello all users "
+                                    },
+                                    "birthDate": {
+                                        "type": "string",
+                                        "description": "user birth day",
+                                        "example": "1-1-1995"
+                                    },
+                                    "profilePic": {
+                                        "type": "string",
+                                        "description": "user profile pic"
+                                    },
+                                    "skills": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "329"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"149-XGSDF3TvKildbNRKFioKpXL5paM\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 18:28:06 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "User Updated",
+                                    "error": false,
+                                    "code": 200,
+                                    "data": {
+                                        "id": 1,
+                                        "uuid": "f4cac0f6-0f7e-4980-a9cd-a9c448f00b49",
+                                        "username": "sabry1993",
+                                        "firstName": "sabry",
+                                        "lastName": "dawood",
+                                        "mobile": "201069017890",
+                                        "email": "Ocie_DuBuque70@hotmail.com",
+                                        "role": "user",
+                                        "createdAt": "2023-12-05T22:05:33.000Z",
+                                        "updatedAt": "2023-12-06T18:28:06.437Z"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "61"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"3d-TjcGGnzZHrcIzvOkJAisXfyEDSY\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 18:32:57 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "Username Already Exists",
+                                    "error": true,
+                                    "code": 400
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "52"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"34-LKiwQr14jW+0A52VdCEV4XsaM80\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 18:33:22 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "User Not Found",
+                                    "error": true,
+                                    "code": 404
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/settings/update-email": {
+            "post": {
+                "tags": [
+                    "Users > Settings"
+                ],
+                "summary": "Update Email",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userId": {
+                                        "type": "integer",
+                                        "description": "user id ( required )",
+                                        "example": "150"
+                                    },
+                                    "redirect": {
+                                        "type": "string",
+                                        "description": "the url will redirect  to it after varify email",
+                                        "example": "http://localhost:5173"
+                                    },
+                                    "new_email": {
+                                        "type": "string",
+                                        "description": "the new email to change",
+                                        "example": "kaz5@gmail.com"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "159"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"9f-U3VKfAuDpcvvcdgeMJkTWNAFaJM\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 18:37:50 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "Please Check Your Email",
+                                    "error": false,
+                                    "code": 200,
+                                    "data": {
+                                        "userId": 15,
+                                        "email": "kazouya25@gmail.com",
+                                        "code": "d6cc77ff-3bb5-414a-89d6-7e576b9b2063"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "58"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"3a-1qR5PlVthCFxuXAsS3Wg3J/2YKM\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 18:36:49 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "Email Already Exists",
+                                    "error": true,
+                                    "code": 400
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "headers": {
+                            "x-powered-by": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Virus24"
+                                }
+                            },
+                            "Connection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                }
+                            },
+                            "Access-Control-Allow-Headers": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "X-Requested-With, Content-Encoding, Authorization, Content-Type, Origin, Accept"
+                                }
+                            },
+                            "Access-Control-Allow-Credentials": {
+                                "schema": {
+                                    "type": "boolean",
+                                    "example": "true"
+                                }
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+                                }
+                            },
+                            "Access-Control-Max-Age": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "86400"
+                                }
+                            },
+                            "X-Frame-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "SAMEORIGIN"
+                                }
+                            },
+                            "X-XSS-Protection": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "1; mode=block"
+                                }
+                            },
+                            "X-Content-Type-Options": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                }
+                            },
+                            "Referrer-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "no-referrer"
+                                }
+                            },
+                            "Cross-Origin-Embedder-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "require-corp"
+                                }
+                            },
+                            "Cross-Origin-Opener-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Cross-Origin-Resource-Policy": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "same-origin"
+                                }
+                            },
+                            "Strict-Transport-Security": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                }
+                            },
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "application/json; charset=utf-8"
+                                }
+                            },
+                            "Content-Length": {
+                                "schema": {
+                                    "type": "integer",
+                                    "example": "52"
+                                }
+                            },
+                            "ETag": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "W/\"34-LKiwQr14jW+0A52VdCEV4XsaM80\""
+                                }
+                            },
+                            "Date": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Wed, 06 Dec 2023 18:38:46 GMT"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "message": "User Not Found",
+                                    "error": true,
+                                    "code": 404
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/webhook": {
+            "post": {
+                "tags": [
+                    "WebHooks"
+                ],
+                "summary": "test",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "gsgsg": {
+                                        "type": "string",
+                                        "example": "shgsghsgsgsg"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/status": {
+            "get": {
+                "tags": [
+                    "General"
+                ],
+                "summary": "Status",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
