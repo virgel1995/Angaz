@@ -172,8 +172,6 @@ class DatabaseMigrationFromOld {
         await this.CreateRecords(ServiceFeatures, newServiceFeatures);
     } // 
 
-
-
     migrate = async () => {
         await this.handleOldUsers();
         await this.handleOldCategories();

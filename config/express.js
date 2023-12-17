@@ -4,6 +4,34 @@ const { ErrorMangement } = require('../middleware');
 const allAppRoutes = require('../routes');
 const config = require('.');
 const UserAgentFetcher = require('./userAgent')
+
+const requestQueue = [];
+
+/**
+ * Processes the next request in the request queue.
+ *
+ * @param {type} paramName - description of parameter
+ * @return {type} description of return value
+ */
+function processNextRequest() {
+    if (requestQueue.length > 0) {
+        const { req, res, next } = requestQueue[0];
+        // console.log(`Processing request for ${req.method} ${req.baseUrl}`);
+        setTimeout(() => {
+            next();
+            requestQueue.shift();
+            processNextRequest();
+        }, 10);
+    }
+}
+
+/**
+ * Initializes an Express application.
+ *
+ * @param {Object} app - The Express application object.
+ * @return {undefined}
+ */
+
 const ExpressApplication = (app) => {
     const allowedHeaders = config.allowedHeaders.join(', ');
     app.use((req, res, next) => {
@@ -55,16 +83,35 @@ const ExpressApplication = (app) => {
             }
         }
     });
-
-    //  // eslint-disable-next-line no-unused-vars
-    //  app.use((err, req, res, next) => {
-    //   if (err.message === 'Origin not allowed') {
-    //    res.status(403).json({ error: 'Origin not allowed' });
-    //   } else {
-    //    res.status(500).json({ message: err.message });
-    //   }
-    //  });
-    app.use(UserAgentFetcher.initMiddleware());
+    app.use((req, res, next) => {
+        //  enqueue incoming requests
+        requestQueue.push({ req, res, next });
+        if (requestQueue.length === 1) {
+            processNextRequest();
+        }
+        // tracking request time for each request
+        const start = Date.now();
+        res.on('finish', () => {
+            const end = Date.now();
+            const duration = end - start;
+            // eslint-disable-next-line no-console
+            console.log({
+                method: req.method,
+                route: req.baseUrl,
+                status: res.statusCode,
+                duration: `${duration}ms`,
+            })
+        });
+        // add ip Adress to request
+        const forwardedFor = req.headers['x-forwarded-for'];
+        const userIp = forwardedFor ? forwardedFor.split(',')[0] : req.headers['x-real-ip'] || req.headers['x-client-ip'] || req.headers['x-remote-ip'];
+        if (userIp) {
+            req.userIp = userIp;
+        }
+        next();
+    });
+    // app.use(UserAgentFetcher.initMiddleware());
+    // Middleware to log the time taken for each request
     allAppRoutes(app);
     //  swagger docs 
     require('./Swagger')(app)

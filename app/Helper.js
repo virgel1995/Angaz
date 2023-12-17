@@ -1,5 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
+const { default: axios } = require('axios');
+const { SiteSettings } = require('../database');
 
 class Helper {
     constructor() { }
@@ -239,6 +241,24 @@ class Helper {
             return false
         }
         return true
+    }
+
+    static async GetUserLocation(ip) {
+        const settings = await SiteSettings.findOne({
+            where: {
+                name: 'location'
+            }
+        })
+        const { data } = await axios.get(`https://api.geoapify.com/v1/ipinfo?ip=${ip}&apiKey=${settings.value}`)
+        const userLocation = {
+            city: data?.city?.name ? data.city.name : null,
+            country: data?.country?.name ? data?.country?.name : null,
+            country_code: data?.country?.iso_code ? data.country.iso_code : null,
+            latitude: data?.location?.latitude ? data.location.latitude : null,
+            longitude: data?.location?.longitude ? data.location.longitude : null,
+            ip: data?.ip ? data.ip : null
+        }
+        return userLocation
     }
 }
 

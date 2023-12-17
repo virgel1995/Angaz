@@ -1,9 +1,12 @@
+const axios = require('axios')
+
 var usrg = require('./fetcher');
 var UserAgent = usrg.UserAgent;
 module.exports = new UserAgent();
 module.exports.UserAgent = UserAgent;
 module.exports.initMiddleware = function () {
-    return function (req, res, next) {
+    return async function (req, res, next) {
+
         var source = req.headers['user-agent'] || '';
         if (req.headers['x-ucbrowser-ua']) {  //special case of UC Browser
             source = req.headers['x-ucbrowser-ua'];

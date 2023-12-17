@@ -32,9 +32,12 @@ const DisputReport = require("./models/DisputReport");
 const Booking = require("./models/booking");
 const Project = require("./models/Project");
 const ProductOffers = require("./models/ProductOffers");
-const BankAccount = require("./models/BankAccount");
+const Payments = require("./models/Payments");
 const Jobs = require("./models/Jobs");
+const Skills = require("./models/Skills");
 const Features = require("./models/Features");
+const SiteSettings = require("./models/SiteSettings");
+
 // ++++++++++++++++ Payment Methods +++++++++++++++++++++++
 const PayBank = require("./models/PayMethods/bank");
 const PayCard = require("./models/PayMethods/card");
@@ -47,60 +50,62 @@ const ServiceDisLikes = require('./models/service/disLikes')
 const ServiceLikes = require('./models/service/Likes')
 const ServiceFeatures = require('./models/service/Featuers')
 // ++++++++++++++++ Project Helpers ++++++++++++++++++++++++
-// const ProjectLikes = require('./models/Project/Likes')
 const ProjectAttachments = require('./models/Project/Attachments')
+const ProjectSkill = require('./models/Project/ProjectSkill')
+// +++++++++++++++++++++++++ User +++++++++++++++++
+const UserSkill = require('./models/User/UserSkill')
 // add bankId to PayBank
-BankAccount.hasMany(PayBank, {
-    foreignKey: "AccountId",
+Payments.hasMany(PayBank, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
-PayBank.belongsTo(BankAccount, {
-    foreignKey: "AccountId",
+PayBank.belongsTo(Payments, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
 // add cardId to PayCard
-BankAccount.hasMany(PayCard, {
-    foreignKey: "AccountId",
+Payments.hasMany(PayCard, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
-PayCard.belongsTo(BankAccount, {
-    foreignKey: "AccountId",
+PayCard.belongsTo(Payments, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
 // add instaPayId to PayInstaPay
-BankAccount.hasMany(PayInstaPay, {
-    foreignKey: "AccountId",
+Payments.hasMany(PayInstaPay, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
-PayInstaPay.belongsTo(BankAccount, {
-    foreignKey: "AccountId",
+PayInstaPay.belongsTo(Payments, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
 // add eWalletId to PayEWallet
-BankAccount.hasMany(PayEWallet, {
-    foreignKey: "AccountId",
+Payments.hasMany(PayEWallet, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
-PayEWallet.belongsTo(BankAccount, {
-    foreignKey: "AccountId",
+PayEWallet.belongsTo(Payments, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
 // add payPalId to PayPayPal
-BankAccount.hasMany(PayPayPal, {
-    foreignKey: "AccountId",
+Payments.hasMany(PayPayPal, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
-PayPayPal.belongsTo(BankAccount, {
-    foreignKey: "AccountId",
+PayPayPal.belongsTo(Payments, {
+    foreignKey: "PaymentId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
@@ -110,13 +115,13 @@ PayPayPal.belongsTo(BankAccount, {
 
 // ++++++++++++++++ Payment Methods End +++++++++++++++++++++++
 // ========================== Assocations Here ==========================
-// add userId to BankAccount 
-User.hasOne(BankAccount, {
+// add userId to Payments 
+User.hasOne(Payments, {
     foreignKey: "userId",
     targetKey: "id",
     onDelete: "CASCADE",
 });
-BankAccount.belongsTo(User, {
+Payments.belongsTo(User, {
     foreignKey: "userId",
     targetKey: "id",
     onDelete: "CASCADE",
@@ -315,17 +320,6 @@ SubCategory.belongsTo(Category, {
     onDelete: "CASCADE",
 });
 
-// create likes table assocation between user and project
-// Project.hasMany(ProjectLikes, {
-//     as: 'likes',
-//     onDelete: 'CASCADE'
-// })
-// User.hasMany(ProjectLikes, {
-//     onDelete: 'CASCADE'
-// })
-// ProjectLikes.belongsTo(User)
-// ProjectLikes.belongsTo(Project)
-
 // add projectId to ProjectAttachments
 Project.hasMany(ProjectAttachments, {
     as: 'attachments',
@@ -426,15 +420,52 @@ ExtraService.hasMany(Booking, {
 Features.belongsToMany(Service, { through: ServiceFeatures });
 Service.belongsToMany(Features, { through: ServiceFeatures });
 
+
+//  add skills to user
+User.belongsToMany(Skills, {
+    through: UserSkill,
+    as: 'skills',
+});
+Skills.belongsToMany(User, {
+    through: UserSkill,
+});
+
+// add skills to Projects
+Project.belongsToMany(Skills, {
+    through: ProjectSkill,
+    as: 'skills',
+});
+Skills.belongsToMany(Project, {
+    through: ProjectSkill,
+});
+
+const seedSiteSettings = async () => {
+    const ifExits = await SiteSettings.findOne({
+        where: {
+            name: 'location'
+        }
+    });
+    if (!ifExits) {
+        await SiteSettings.create({
+            name: 'location',
+            value: '2d92ba9f3eb044fb96905da4e6c9b55e'
+        })
+    }
+}
+seedSiteSettings()
+
 //    ======================= Export All Models From THis File =======================
 exports.ProductOffers = ProductOffers;
 exports.ServiceFavorite = ServiceFavorite;
 exports.ServiceDisLikes = ServiceDisLikes;
 exports.ServiceLikes = ServiceLikes;
 exports.ServiceFeatures = ServiceFeatures;
-
-// exports.ProjectLikes = ProjectLikes;
+exports.UserSkill = UserSkill;
+exports.ProjectSkill = ProjectSkill;
+exports.ProjectAttachments = ProjectAttachments;
+exports.Payments = Payments;
 exports.Admin = Admin;
+exports.SiteSettings = SiteSettings;
 exports.User = User;
 exports.Transaction = Transaction;
 exports.SubCategory = SubCategory;
@@ -447,6 +478,7 @@ exports.DisputReport = DisputReport;
 exports.Project = Project;
 exports.Service = Service;
 exports.Jobs = Jobs;
+exports.Skills = Skills;
 exports.Features = Features;
 
 
@@ -492,7 +524,7 @@ exports.Features = Features;
 //     const user = await User.findByPk(1, {
 //         include: [
 //             {
-//                 model: BankAccount,
+//                 model: Payments,
 //                 include: [
 //                     {
 //                         all : true

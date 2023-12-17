@@ -4,8 +4,8 @@ const User = require('./User')
 const Category = require('./Category')
 const SubCategory = require('./subCategory')
 const ProductOffers = require('./ProductOffers')
-const ProjectLikes = require('./Project/Likes')
 const ProjectAttachments = require('./Project/Attachments')
+const Skills = require('./Skills')
 
 const Project = sequelize.define("project", {
     id: {
@@ -27,10 +27,6 @@ const Project = sequelize.define("project", {
         type: Sequelize.TEXT,
         defaultValue: "No Description Yet"
     },
-    skills: {
-        type: Sequelize.STRING,
-        allowNull: true
-    },
     expectedBudget: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -45,52 +41,58 @@ const Project = sequelize.define("project", {
     },
 
 }, {
+    defaultScope: {},
     scopes: {
-        approved: {
-            where: {
-                status: true
-            },
-        },
-        pending: {
-            where: {
-                status: false
-            },
-            include: [
-                {
-                    all: true
-                }
-            ]
-        },
-        ASSOC: {
-            include: [
-                {
-                    model: User,
-                    attributes: {
-                        exclude: ['password']
-                    },
-                },
-                {
-                    model: Category,
-                },
-                {
-                    model: SubCategory
-                },
-                {
-                    model: ProductOffers,
-                    as: 'offers'
-                },
-                {
-                    model: ProjectLikes,
-                    as: 'likes'
-                },
-                {
-                    model: ProjectAttachments,
-                    as: 'attachments'
-                },
-
-            ]
-        }
+        approved: getCommonIncludeConfig(true),
+        pending: getCommonIncludeConfig(false),
+        ASSOC: getCommonIncludeConfig()
     }
 
 })
+
+function getCommonIncludeConfig(type) {
+    let assoc = {
+        attributes: {
+            exclude: ['categId', 'subCategId', 'createdUser', 'updatedAt', 'status']
+        },
+        include: [
+            {
+                model: ProjectAttachments,
+                as: 'attachments',
+                attributes: ['id', 'url']
+            },
+            {
+                model: Skills,
+                as: 'skills',
+                attributes: ['id', 'name'],
+                through: {
+                    attributes: []
+                }
+            },
+            {
+                model: Category,
+                attributes: ['title', 'id']
+            },
+            {
+                model: SubCategory
+            },
+            {
+                model: ProductOffers,
+                as: 'offers',
+                attributes: ['id', 'price']
+            },
+            {
+                model: User,
+                attributes: ['id', 'profilePic', 'firstname', 'lastname', 'username', 'email'],
+            },
+        ]
+    }
+    // eslint-disable-next-line no-undefined
+    if (type !== undefined) {
+        assoc.where = {
+            status: type
+        }
+    }
+    return assoc
+}
 module.exports = Project

@@ -98,14 +98,14 @@ exports.CreateProjectRules = Validator({
     body: Joi.object().required().keys({
         title: Joi.string().required(),
         description: Joi.string().required(),
-        skills: Joi.string().required().custom((value) => {
+        skills: Joi.array().required().custom((value) => {
             let processValue = value ? Array.from(value) : []
             if (processValue.length < 1) {
                 throw new Error("You Must Add one Skill at least")
             }
             return value
         }),
-        expectedBudget: Joi.string().required(),
+        expectedBudget: Joi.number().required(),
         estimatedDeliveryTime: Joi.string().required().custom((value) => {
             if (!Helper.validateDate(value)) {
                 throw new Error("not valid Date Format")
@@ -128,14 +128,14 @@ exports.ProjectUpdateRules = Validator({
         id: Joi.string().required(),
         title: Joi.string(),
         description: Joi.string(),
-        skills: Joi.string().custom((value) => {
+        skills: Joi.array().custom((value) => {
             let processValue = value ? Array.from(value) : []
             if (processValue.length < 1) {
                 throw new Error("You Must Add one Skill at least")
             }
             return value
         }),
-        expectedBudget: Joi.string(),
+        expectedBudget: Joi.number(),
         estimatedDeliveryTime: Joi.string().custom((value) => {
             if (!Helper.validateDate(value)) {
                 throw new Error("not valid Date Format")
@@ -146,8 +146,8 @@ exports.ProjectUpdateRules = Validator({
             }
             return value
         }),
-        categId: Joi.string(),
-        subCategId: Joi.string(),
+        attachments: Joi.any(),
+
     })
 })
 

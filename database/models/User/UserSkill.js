@@ -3,7 +3,7 @@
 const { Sequelize } = require("sequelize");
 const { sequelize } = require("../..");
 
-const ProjectLikes = sequelize.define('project_likes', {
+const UserSkill = sequelize.define('user_skill', {
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -15,4 +15,4 @@ const ProjectLikes = sequelize.define('project_likes', {
     timestamps: false
 })
 
-module.exports = ProjectLikes
+module.exports = UserSkill

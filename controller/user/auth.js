@@ -1,11 +1,10 @@
 const { Op } = require('sequelize');
 const TokenManager = require('../../app/jwt');
-const { User } = require('../../database');
+const { User, Payments } = require('../../database');
 const MailManger = require('../../app/MailManger');
 const MailTemplets = require('../../app/MailTemplets');
 const config = require('../../config');
 const Helper = require('../../app/Helper');
-const BankAccount = require('../../database/models/BankAccount');
 
 class UserAuthController {
     static async Register(req, res) {
@@ -45,24 +44,15 @@ class UserAuthController {
             country_code: `+${mobile.slice(0, 2)}`,
             verify_code: code
         });
-
-        try {
-            const CreateBankAccount = await BankAccount.create({
-                userId: newUser.id
-            })
-            console.log("Bank Account created successfully");
-        } catch (error) {
-            console.log("Error while creating bank account", error);
-        }
-
-
+        await Payments.create({
+            userId: newUser.id
+        })
         const varifyEmailToken = TokenManager.generateToken({
             id: newUser.id,
             email: newUser.email,
             code: newUser.verify_code,
             redirectUrl: redirect.endsWith('/') ? redirect : `${redirect}/`
         });
-
         MailManger.send(
             newUser.email,
             'Confirm Account',

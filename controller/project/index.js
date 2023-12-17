@@ -1,5 +1,5 @@
-const Helper = require("../../app/Helper")
-const { Project, User, Category, SubCategory } = require("../../database")
+const { Op } = require("sequelize")
+const { Project, User, Category, SubCategory, ProjectSkill, ProjectAttachments, Skills } = require("../../database")
 
 class ProjectController {
     static async create(req, res) {
@@ -11,7 +11,8 @@ class ProjectController {
             estimatedDeliveryTime,
             createdUser,
             categId,
-            subCategId
+            subCategId,
+            attachments
         } = req.body
         const userExist = await User.findByPk(createdUser)
         if (!userExist) {
@@ -49,6 +50,22 @@ class ProjectController {
             categId,
             subCategId: subCategId ? subCategId : null
         })
+        if (attachments) {
+            const attachmentsArr = attachments.map((url) => {
+                return {
+                    projectId: newProject.id,
+                    url: url
+                }
+            })
+            await ProjectAttachments.bulkCreate(attachmentsArr)
+        }
+        const skilsArr = skills.map((skill) => {
+            return {
+                projectId: newProject.id,
+                skillId: skill.id,
+            }
+        })
+        await ProjectSkill.bulkCreate(skilsArr)
         return res.status(201).json({
             error: false,
             code: 201,
@@ -63,9 +80,8 @@ class ProjectController {
             description,
             expectedBudget,
             estimatedDeliveryTime,
-            categId,
             skills,
-            subCategId
+            attachments
         } = req.body
         if (!id) {
             return res.status(400).json({
@@ -74,7 +90,7 @@ class ProjectController {
                 message: "projectId is required"
             })
         }
-        const project = await Project.findByPk(id)
+        const project = await Project.scope('ASSOC').findByPk(id)
         if (!project) {
             return res.status(404).json({
                 error: true,
@@ -82,20 +98,58 @@ class ProjectController {
                 message: "project is not Exist"
             })
         }
-        // if (req.user.id !== project.createdUser) {
-        //     return res.status(503).json({
-        //         error: true,
-        //         code: 503,
-        //         message: "Forbidden : You are not allowed to update this project"
-        //     })
-        // }
+        // add or delete skills
+        if (skills) {
+            const existingSkills = project.skills.map(s => s.id);
+            // Add any new skills
+            const newSkills = skills.filter(s => !existingSkills.includes(s.id));
+            if (newSkills.length > 0) {
+                await Promise.all(
+                    newSkills.map(s => ProjectSkill.create({
+                        projectId: id,
+                        skillId: s.id
+                    }))
+                );
+            }
+            // Remove old skills
+            const removedSkills = existingSkills.filter(id => !skills.map(s => s.id).includes(id));
+            if (removedSkills.length > 0) {
+                await Promise.all(
+                    removedSkills.map(s => ProjectSkill.destroy({
+                        where: { projectId: id, skillId: s }
+                    }))
+                );
+            }
+        }
+        // add or delete attachments
+        if (attachments) {
+            const exitingAttachments = project.attachments.map(a => a.url);
+            const newAttachments = attachments.filter(a => !exitingAttachments.includes(a));
+            if (newAttachments.length > 0) {
+                await Promise.all(
+                    newAttachments.map(a => ProjectAttachments.create({
+                        projectId: id,
+                        url: a
+                    }))
+                );
+            }
+            const removedAttachments = exitingAttachments.filter(a => !attachments.includes(a));
+            if (removedAttachments.length > 0) {
+                await Promise.all(
+                    removedAttachments.map(a => ProjectAttachments.destroy({
+                        where: {
+                            projectId: id,
+                            url: a
+                        }
+                    }))
+                );
+            }
+        }
+
         if (title == project.title &&
             description == project.description &&
             expectedBudget == project.expectedBudget &&
-            estimatedDeliveryTime == project.estimatedDeliveryTime &&
-            categId == project.categId &&
-            subCategId == project.subCategId &&
-            skills == project.skills) {
+            estimatedDeliveryTime == project.estimatedDeliveryTime && !skills) {
             return res.status(400).json({
                 error: true,
                 code: 400,
@@ -120,45 +174,16 @@ class ProjectController {
             project.expectedBudget = expectedBudget
         }
         if (estimatedDeliveryTime) {
-            if (!Helper.validateDate(estimatedDeliveryTime)) {
-                return res.status(400).json({
-                    error: true,
-                    code: 400,
-                    message: "Estimated Delivery Time is required and must be a date."
-                });
-            }
-            if (!Helper.compareTwoDates(estimatedDeliveryTime, Helper.getCurrentDate())) {
-                return res.status(400).json({
-                    error: true,
-                    code: 400,
-                    message: "Estimated Delivery Time must be greater than the current date and the project creation date."
-                });
-            }
             project.estimatedDeliveryTime = estimatedDeliveryTime
         }
-        if (categId) {
-            const checkCategory = await Category.findByPk(categId)
-            if (!checkCategory) {
-                return res.status(417).json({
-                    error: true,
-                    code: 417,
-                    message: "Category is Not Exist"
-                })
-            }
-            project.categId = categId
-        }
-        if (subCategId) {
-            project.subCategId = subCategId
-        }
-        if (skills) {
-            project.skills = skills
-        }
         await project.save()
+        // get updated project with new associations data
+        const updated = await Project.scope('ASSOC').findByPk(id)
         return res.status(200).json({
             error: false,
             code: 200,
             message: "project is Updated",
-            data: project
+            data: updated
         })
 
     }
@@ -218,17 +243,82 @@ class ProjectController {
         })
     }
     static async findAll(req, res) {
-        const { sort, page, limit, orderBy } = req.query;
+        let {
+            sort,
+            page,
+            limit,
+            orderBy,
+            title,
+            type,
+            expectedBudget,
+            budgetType,
+            estimatedDeliveryTime,
+            skills,
+            category,
+            subCategory
+        } = req.query;
+
+        let _Skills = skills ? JSON.parse(skills.replace(/'/g, '"')) : null;
+        if (type && ['approved', 'pending'].indexOf(type) === -1) {
+            return res.status(400).json({
+                error: true,
+                code: 400,
+                message: "type must be 'approved' or 'pending'"
+            })
+        }
+        const whereCluse = {}
         const order = orderBy || 'DESC';
         const sortedBy = sort || 'id';
         const pageNum = page ? parseInt(page) : 1;
         const pageLimit = limit ? parseInt(limit) : 10;
         const offset = (pageNum - 1) * pageLimit;
-        const records = await Project.scope('ASSOC').findAll({
+        const filterType = type || 'approved'
+        let filter = {
             order: [[sortedBy, order]],
             limit: pageLimit,
             offset,
-        })
+        }
+        if (title) {
+            whereCluse.title = {
+                [Op.like]: `%${title}%`
+            }
+        }
+        if (expectedBudget) {
+            if (['less', 'more'].indexOf(budgetType) === -1) {
+                return res.status(400).json({
+                    error: true,
+                    code: 400,
+                    message: "budgetType must be 'less' or 'more'"
+                })
+            }
+            whereCluse.expectedBudget = {
+                [budgetType === 'less' ? Op.lte : Op.gte]: expectedBudget
+            }
+        }
+        if (estimatedDeliveryTime) {
+            whereCluse.estimatedDeliveryTime = {
+                [Op.gte]: estimatedDeliveryTime
+            }
+        }
+        if (_Skills) {
+            filter.include = [{
+                model: Skills,
+                as: "skills",
+                where: {
+                    name: {
+                        [Op.in]: _Skills
+                    }
+                }
+            }]
+        }
+        if (category) {
+            whereCluse.categId = category
+        }
+        if (subCategory) {
+            whereCluse.subCategId = subCategory
+        }
+        filter.where = whereCluse
+        const records = await Project.scope(filterType).findAll(filter)
         const pagination = {
             page: pageNum,
             itemPerPage: pageLimit,
@@ -245,6 +335,7 @@ class ProjectController {
         return res.json({
             error: false,
             code: 200,
+            count: records.length,
             data: records,
             pagination
         })

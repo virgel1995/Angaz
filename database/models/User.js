@@ -76,11 +76,6 @@ const User = sequelize.define("user", {
         type: Sequelize.STRING,
         allowNull: true
     },
-    skills: {
-        type: Sequelize.JSON(Sequelize.STRING), // Array of skills
-        allowNull: true,
-        defaultValue: []
-    },
     aboutMe: {
         type: Sequelize.STRING,
         defaultValue: "I'm New User"

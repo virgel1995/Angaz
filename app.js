@@ -14,11 +14,11 @@ const app = express()
 app.set('trust proxy', ['loopback', 'linklocal', 'uniquelocal']);
 app.use(express.static('public'));
 app.use(express.json({
-    limit: '50md'
+    limit: '100mb'
 }))
 app.use(express.urlencoded({
     extended: true,
-    limit: '50mb'
+    limit: '100mb'
 }))
 
 

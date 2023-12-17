@@ -1,7 +1,7 @@
 const { sequelize } = require("..");
 const { Sequelize } = require("sequelize");
 
-const BankAccount = sequelize.define("bankAccount", {
+const Payments = sequelize.define("payment", {
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -36,4 +36,4 @@ const BankAccount = sequelize.define("bankAccount", {
 })
 
 
-module.exports = BankAccount
+module.exports = Payments
