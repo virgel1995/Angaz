@@ -1,6 +1,6 @@
 const { sequelize } = require("..");
 const { Sequelize } = require("sequelize");
-const ExtraService = sequelize.define("extraService", {
+const Features = sequelize.define("features", {
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -12,13 +12,10 @@ const ExtraService = sequelize.define("extraService", {
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
     },
-    price: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
     title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
     },
 
 })
-module.exports = ExtraService
+module.exports = Features

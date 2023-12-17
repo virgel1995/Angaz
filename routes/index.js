@@ -2,7 +2,7 @@ const WebHooksRoutes = require('./webhook')
 const AdminRoutes = require('./Admin')
 const UsersRoutes = require('./Users')
 const projectRoutes = require("./project")
-const ServicesRoutes = require('./service') 
+const ServicesRoutes = require('./service')
 module.exports = (app) => {
     // all Routes Here 
     app.use('/admin', AdminRoutes);
@@ -36,6 +36,6 @@ module.exports = (app) => {
     });
 
     app.get('/', (req, res) => {
-        res.send('Ok');
+        res.send(req.useragent);
     });
 };

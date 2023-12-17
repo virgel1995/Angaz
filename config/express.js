@@ -3,7 +3,7 @@ exceptionHandler.handle();
 const { ErrorMangement } = require('../middleware');
 const allAppRoutes = require('../routes');
 const config = require('.');
-
+const UserAgentFetcher = require('./userAgent')
 const ExpressApplication = (app) => {
     const allowedHeaders = config.allowedHeaders.join(', ');
     app.use((req, res, next) => {
@@ -64,6 +64,7 @@ const ExpressApplication = (app) => {
     //    res.status(500).json({ message: err.message });
     //   }
     //  });
+    app.use(UserAgentFetcher.initMiddleware());
     allAppRoutes(app);
     //  swagger docs 
     require('./Swagger')(app)

@@ -14,11 +14,23 @@ const User = sequelize.define("user", {
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
     },
+    firstname: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    lastname: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
     username: {
         type: Sequelize.STRING,
         allowNull: false,
     },
     email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    country_code: {
         type: Sequelize.STRING,
         allowNull: false,
     },
@@ -36,6 +48,14 @@ const User = sequelize.define("user", {
     },
     profilePic: {
         type: Sequelize.STRING,
+        allowNull: true
+    },
+    bg_image: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
+    address: {
+        type: Sequelize.JSON,
         allowNull: true
     },
     role: {

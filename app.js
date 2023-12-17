@@ -87,3 +87,10 @@ process.on('SIGTERM', () => {
         server.close();
     }
 });
+const DatabaseMigrationFromOld = require('./app/DatabaseMigration');
+if (process.env.GET_OLD_DATABASE === 'true') {
+    const DbMigration = new DatabaseMigrationFromOld();
+    DbMigration.initConnection(); // to connect to old database 
+    // Do not uncomment this DbMigration.migrate() Now as it will create new database
+    // DbMigration.migrate(); // to migrate old database to new
+}

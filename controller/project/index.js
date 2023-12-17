@@ -139,7 +139,6 @@ class ProjectController {
         })
 
     }
-
     static async delete(req, res) {
         let { id } = req.body
         if (!id) {
@@ -171,7 +170,6 @@ class ProjectController {
             message: "project is Deleted",
         })
     }
-
     static async getById(req, res) {
         const { id } = req.params
         if (!id) {

@@ -94,7 +94,6 @@ exports.UserUpdateEmailRules = Validator({
     })
 })
 
-// title, description, skills, expectedBudget, estimatedDeliveryTime, createdUser
 exports.CreateProjectRules = Validator({
     body: Joi.object().required().keys({
         title: Joi.string().required(),
@@ -136,7 +135,6 @@ exports.CreateSubCategorytRules = Validator({
         categId: Joi.string().required(),
     })
 })
-// id, userId, type
 exports.ServiceLikeOrDisLikeOrFavoriteRules = Validator({
     body: Joi.object().required().keys({
         id: Joi.string().required(),

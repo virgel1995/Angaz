@@ -32,6 +32,7 @@ const Booking = sequelize.define("booking", {
         type: Sequelize.BOOLEAN,
         defaultValue: true
     },
+    
 })
 
 

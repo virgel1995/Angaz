@@ -21,6 +21,10 @@ const SubCategory = sequelize.define("subCategory", {
         type: Sequelize.STRING,
         allowNull: true
     },
+    image: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
 })
 
 

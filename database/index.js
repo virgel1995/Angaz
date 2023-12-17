@@ -30,10 +30,11 @@ const Service = require("./models/Service");
 const ExtraService = require("./models/ExtraService");
 const DisputReport = require("./models/DisputReport");
 const Booking = require("./models/booking");
-const Works = require("./models/Works");
 const Project = require("./models/Project");
 const ProductOffers = require("./models/ProductOffers");
 const BankAccount = require("./models/BankAccount");
+const Jobs = require("./models/Jobs");
+const Features = require("./models/Features");
 // ++++++++++++++++ Payment Methods +++++++++++++++++++++++
 const PayBank = require("./models/PayMethods/bank");
 const PayCard = require("./models/PayMethods/card");
@@ -44,6 +45,7 @@ const PayPayPal = require("./models/PayMethods/payPal");
 const ServiceFavorite = require('./models/service/Favorite')
 const ServiceDisLikes = require('./models/service/disLikes')
 const ServiceLikes = require('./models/service/Likes')
+const ServiceFeatures = require('./models/service/Featuers')
 // ++++++++++++++++ Project Helpers ++++++++++++++++++++++++
 const ProjectLikes = require('./models/Project/Likes')
 const ProjectAttachments = require('./models/Project/Attachments')
@@ -243,39 +245,7 @@ DisputReport.belongsTo(Booking, {
     targetKey: "id",
     onDelete: "CASCADE",
 });
-// add userId to Works
-User.hasMany(Works, {
-    foreignKey: "userId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-Works.belongsTo(User, {
-    foreignKey: "userId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-// add categId to Works
-Category.hasMany(Works, {
-    foreignKey: "categId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-Works.belongsTo(Category, {
-    foreignKey: "categId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-// add subCategId to Works
-SubCategory.hasMany(Works, {
-    foreignKey: "subCategId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-Works.belongsTo(SubCategory, {
-    foreignKey: "subCategId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
+
 // add createdUser to Projects 
 User.hasMany(Project, {
     foreignKey: "createdUser",
@@ -398,13 +368,71 @@ User.hasMany(ServiceFavorite, {
 })
 ServiceFavorite.belongsTo(User)
 ServiceFavorite.belongsTo(Service)
-
+// add createdUser to Jobs
+User.hasMany(Jobs, {
+    foreignKey: "createdUser",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+Jobs.belongsTo(User, {
+    foreignKey: "createdUser",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+// add categId to Jobs
+Category.hasMany(Jobs, {
+    foreignKey: "categId",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+Jobs.belongsTo(Category, {
+    foreignKey: "categId",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+// add subCategId to Jobs
+SubCategory.hasMany(Jobs, {
+    foreignKey: "subCategId",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+Jobs.belongsTo(SubCategory, {
+    foreignKey: "subCategId",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+// add disputeReport to Booking
+DisputReport.hasMany(Booking, {
+    foreignKey: "disputeReportId",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+Booking.belongsTo(DisputReport, {
+    foreignKey: "disputeReportId",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+//  add extra_service to Boolings 
+Booking.belongsTo(ExtraService, {
+    foreignKey: "extraServiceId",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+ExtraService.hasMany(Booking, {
+    foreignKey: "extraServiceId",
+    targetKey: "id",
+    onDelete: "CASCADE",
+});
+Features.belongsToMany(Service, { through: ServiceFeatures });
+Service.belongsToMany(Features, { through: ServiceFeatures });
 
 //    ======================= Export All Models From THis File =======================
 exports.ProductOffers = ProductOffers;
 exports.ServiceFavorite = ServiceFavorite;
 exports.ServiceDisLikes = ServiceDisLikes;
 exports.ServiceLikes = ServiceLikes;
+exports.ServiceFeatures = ServiceFeatures;
+
 exports.ProjectLikes = ProjectLikes;
 exports.Admin = Admin;
 exports.User = User;
@@ -416,9 +444,11 @@ exports.Comment = Comment;
 exports.ExtraService = ExtraService;
 exports.Booking = Booking;
 exports.DisputReport = DisputReport;
-exports.Works = Works;
 exports.Project = Project;
 exports.Service = Service;
+exports.Jobs = Jobs;
+exports.Features = Features;
+
 
 
 

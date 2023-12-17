@@ -8,18 +8,18 @@ const Category = sequelize.define("category", {
         autoIncrement: true,
         primaryKey: true
     },
-    uuid : {
+    uuid: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
     },
-    oldId: {
-        type: Sequelize.INTEGER,
-        allowNull: true
-    },
     title: {
         type: Sequelize.STRING,
         allowNull: false,
+    },
+    status: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
     },
     desc: {
         type: Sequelize.STRING,
