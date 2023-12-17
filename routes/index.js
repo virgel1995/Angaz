@@ -3,12 +3,14 @@ const AdminRoutes = require('./Admin')
 const UsersRoutes = require('./Users')
 const projectRoutes = require("./project")
 const ServicesRoutes = require('./service')
+const BankAccount = require('./bankAccount')
 module.exports = (app) => {
     // all Routes Here 
     app.use('/admin', AdminRoutes);
     app.use('/user', UsersRoutes);
     app.use("/project", projectRoutes)
     app.use("/service", ServicesRoutes)
+    app.use("/bankAccount", BankAccount)
 
 
 

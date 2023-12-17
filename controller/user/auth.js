@@ -46,6 +46,16 @@ class UserAuthController {
             verify_code: code
         });
 
+        try {
+            const CreateBankAccount = await BankAccount.create({
+                userId: newUser.id
+            })
+            console.log("Bank Account created successfully");
+        } catch (error) {
+            console.log("Error while creating bank account", error);
+        }
+
+
         const varifyEmailToken = TokenManager.generateToken({
             id: newUser.id,
             email: newUser.email,
