@@ -12,8 +12,8 @@ class UserSettingsController {
         const {
             userId,
             username,
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             password,
             mobile,
             emailNotification,
@@ -57,16 +57,17 @@ class UserSettingsController {
             user.username = username
         }
         if (firstName) {
-            user.firstName = firstName
+            user.firstName = firstname
         }
         if (lastName) {
-            user.lastName = lastName
+            user.lastName = lastname
         }
         if (password) {
             user.password = password
         }
         if (mobile) {
             user.mobile = mobile
+            user.country_code = `+${mobile.slice(0, 2)}`
         }
         if (emailNotification) {
             user.emailNotification = emailNotification
