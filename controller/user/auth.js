@@ -5,13 +5,14 @@ const MailManger = require('../../app/MailManger');
 const MailTemplets = require('../../app/MailTemplets');
 const config = require('../../config');
 const Helper = require('../../app/Helper');
+const BankAccount = require('../../database/models/BankAccount');
 
 class UserAuthController {
     static async Register(req, res) {
         let {
             username,
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             email,
             password,
             mobile,
@@ -35,12 +36,13 @@ class UserAuthController {
         const code = Helper.generateRandomCode()
         const newUser = await User.create({
             username,
-            firstName,
-            lastName,
+            firstname,
+            lastname,
             email,
             password,
             mobile,
             role,
+            country_code: `+${mobile.slice(0, 2)}`,
             verify_code: code
         });
 
@@ -140,10 +142,10 @@ class UserAuthController {
                 role: user.role,
                 profilePic: user.profilePic,
                 createdAt: user.createdAt,
-                emailNotification : user.emailNotification,
-                aboutMe : user.aboutMe,
-                birthDate : user.birthDate,
-                skills : user.skills,
+                emailNotification: user.emailNotification,
+                aboutMe: user.aboutMe,
+                birthDate: user.birthDate,
+                skills: user.skills,
                 access_token: {
                     data: access_token,
                     validFor: '1 day',
