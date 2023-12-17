@@ -122,6 +122,35 @@ exports.CreateProjectRules = Validator({
         subCategId: Joi.any(),
     })
 })
+
+exports.ProjectUpdateRules = Validator({
+    body: Joi.object().required().keys({
+        id: Joi.string().required(),
+        title: Joi.string(),
+        description: Joi.string(),
+        skills: Joi.string().custom((value) => {
+            let processValue = value ? Array.from(value) : []
+            if (processValue.length < 1) {
+                throw new Error("You Must Add one Skill at least")
+            }
+            return value
+        }),
+        expectedBudget: Joi.string(),
+        estimatedDeliveryTime: Joi.string().custom((value) => {
+            if (!Helper.validateDate(value)) {
+                throw new Error("not valid Date Format")
+            }
+            let currentDate = Helper.getCurrentDate()
+            if (!Helper.compareTwoDates(value, currentDate)) {
+                throw new Error("Estimated Delivery Date Must Be Greater Than Current Date")
+            }
+            return value
+        }),
+        categId: Joi.string(),
+        subCategId: Joi.string(),
+    })
+})
+
 exports.CreateCategorytRules = Validator({
     body: Joi.object().required().keys({
         title: Joi.string().required(),

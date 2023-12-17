@@ -47,7 +47,7 @@ const ServiceDisLikes = require('./models/service/disLikes')
 const ServiceLikes = require('./models/service/Likes')
 const ServiceFeatures = require('./models/service/Featuers')
 // ++++++++++++++++ Project Helpers ++++++++++++++++++++++++
-const ProjectLikes = require('./models/Project/Likes')
+// const ProjectLikes = require('./models/Project/Likes')
 const ProjectAttachments = require('./models/Project/Attachments')
 // add bankId to PayBank
 BankAccount.hasMany(PayBank, {
@@ -316,15 +316,15 @@ SubCategory.belongsTo(Category, {
 });
 
 // create likes table assocation between user and project
-Project.hasMany(ProjectLikes, {
-    as: 'likes',
-    onDelete: 'CASCADE'
-})
-User.hasMany(ProjectLikes, {
-    onDelete: 'CASCADE'
-})
-ProjectLikes.belongsTo(User)
-ProjectLikes.belongsTo(Project)
+// Project.hasMany(ProjectLikes, {
+//     as: 'likes',
+//     onDelete: 'CASCADE'
+// })
+// User.hasMany(ProjectLikes, {
+//     onDelete: 'CASCADE'
+// })
+// ProjectLikes.belongsTo(User)
+// ProjectLikes.belongsTo(Project)
 
 // add projectId to ProjectAttachments
 Project.hasMany(ProjectAttachments, {
@@ -433,7 +433,7 @@ exports.ServiceDisLikes = ServiceDisLikes;
 exports.ServiceLikes = ServiceLikes;
 exports.ServiceFeatures = ServiceFeatures;
 
-exports.ProjectLikes = ProjectLikes;
+// exports.ProjectLikes = ProjectLikes;
 exports.Admin = Admin;
 exports.User = User;
 exports.Transaction = Transaction;

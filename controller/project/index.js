@@ -62,7 +62,10 @@ class ProjectController {
             title,
             description,
             expectedBudget,
-            estimatedDeliveryTime
+            estimatedDeliveryTime,
+            categId,
+            skills,
+            subCategId
         } = req.body
         if (!id) {
             return res.status(400).json({
@@ -89,7 +92,10 @@ class ProjectController {
         if (title == project.title &&
             description == project.description &&
             expectedBudget == project.expectedBudget &&
-            estimatedDeliveryTime == project.estimatedDeliveryTime) {
+            estimatedDeliveryTime == project.estimatedDeliveryTime &&
+            categId == project.categId &&
+            subCategId == project.subCategId &&
+            skills == project.skills) {
             return res.status(400).json({
                 error: true,
                 code: 400,
@@ -129,6 +135,23 @@ class ProjectController {
                 });
             }
             project.estimatedDeliveryTime = estimatedDeliveryTime
+        }
+        if (categId) {
+            const checkCategory = await Category.findByPk(categId)
+            if (!checkCategory) {
+                return res.status(417).json({
+                    error: true,
+                    code: 417,
+                    message: "Category is Not Exist"
+                })
+            }
+            project.categId = categId
+        }
+        if (subCategId) {
+            project.subCategId = subCategId
+        }
+        if (skills) {
+            project.skills = skills
         }
         await project.save()
         return res.status(200).json({

@@ -7,7 +7,7 @@ router.get("/", ProjectController.findAll)
 
 //  
 router.post("/", Validate.CreateProjectRules, ProjectController.create)
-router.put("/", ProjectController.update)
+router.put("/", Validate.ProjectUpdateRules, ProjectController.update)
 router.delete("/", ProjectController.delete)
 
 
