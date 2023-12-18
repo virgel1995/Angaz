@@ -171,6 +171,16 @@ exports.ServiceLikeOrDisLikeOrFavoriteRules = Validator({
     })
 })
 
+exports.PaymentBankRules = Validator({
+    body: Joi.object().required().keys({
+        userId: Joi.string().required(),
+        bankName: Joi.string().required(),
+        accountNumber: Joi.string().required().min(9).max(17),
+        receiverName: Joi.string().required(),
+        IBAN: Joi.string().min(24).max(34),
+    })
+})
+
 exports.CreateServiceRules = Validator({
     body: Joi.object().required().keys({
         createdUser: Joi.string().required(),

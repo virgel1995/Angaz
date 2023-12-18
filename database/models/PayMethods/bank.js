@@ -22,7 +22,7 @@ const PayBank = sequelize.define('pay_bank', {
     },
     IBAN: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
     },
     username: {
         type: Sequelize.STRING,

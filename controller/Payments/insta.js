@@ -88,6 +88,31 @@ class InstaController {
             message: "Data Updated Successfully",
         })
     }
+    static async delete(req, res) {
+        const { userId } = req.body
+        const record = await PayInstaPay.findOne({
+            where: {
+                userId
+            }
+        })
+        if (!record) {
+            return res.status(404).json({
+                error: true,
+                code: 404,
+                message: "No Data Founded"
+            })
+        }
+        await record.destroy()
+        const payment = await Payments.findByPk(record.PaymentId)
+        await payment.update({
+            hasInstaPay: false
+        })
+        return res.status(200).json({
+            error: false,
+            code: 200,
+            message: "Data Deleted Successfully",
+        })
+    }
 }
 
 module.exports = InstaController
