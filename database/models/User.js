@@ -1,6 +1,7 @@
 const CryptoJS = require("crypto-js");
 const { sequelize } = require("..");
 const { Sequelize } = require("sequelize");
+const Payments = require("./Payments");
 
 const User = sequelize.define("user", {
     id: {
@@ -171,6 +172,18 @@ const User = sequelize.define("user", {
                 status: false
             }
         },
+        payments: {
+            include: [
+                {
+                    model: Payments,
+                    include: [
+                        {
+                            all: true
+                        }
+                    ]
+                }
+            ]
+        }
 
     }
 });

@@ -10,7 +10,8 @@ const PayEWallet = sequelize.define('pay_ewallet', {
     },
     mobile: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     username: {
         type: Sequelize.STRING,

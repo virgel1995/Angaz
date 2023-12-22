@@ -10,7 +10,8 @@ const PayInstaPay = sequelize.define('pay_instapay', {
     },
     email: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     username: {
         type: Sequelize.STRING,

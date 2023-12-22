@@ -14,7 +14,8 @@ const PayPayPal = sequelize.define('pay_paypal', {
     },
     email: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     userId: {
         type: Sequelize.INTEGER,

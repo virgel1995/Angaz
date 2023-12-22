@@ -10,7 +10,8 @@ const PayCard = sequelize.define('pay_card', {
     },
     cardNumber: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     cardHolderName: {
         type: Sequelize.STRING,

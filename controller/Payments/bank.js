@@ -1,5 +1,4 @@
-const { User, Payments } = require("../../database")
-const PayBank = require("../../database/models/PayMethods/bank")
+const { User, Payments, PayBank } = require("../../database")
 
 class BankController {
     static async create(req, res) {
@@ -63,13 +62,12 @@ class BankController {
                 message: "Bank Account Not Found"
             })
         }
-        if (bankName && bankName !== "") {
+        if (bankName) {
             bank.bankName = bankName
         }
         if (accountNumber) {
             bank.accountNumber = accountNumber
         }
-        console.log(receiverName.length);
         if (receiverName) {
             bank.receiverName = receiverName
         }
@@ -93,6 +91,32 @@ class BankController {
             error: false,
             code: 200,
             message: "Bank Account Updated Successfully"
+        })
+    }
+
+    static async delete(req, res) {
+        const { userId } = req.body
+        const record = await PayBank.findOne({
+            where: {
+                userId
+            }
+        })
+        if (!record) {
+            return res.status(404).json({
+                error: true,
+                code: 404,
+                message: "No Data Founded"
+            })
+        }
+        await record.destroy()
+        const Payment = await Payments.findByPk(record.PaymentId)
+        await Payment.update({
+            hasBank: false
+        })
+        return res.status(200).json({
+            error: false,
+            code: 200,
+            message: "Data Deleted Successfully",
         })
     }
 }

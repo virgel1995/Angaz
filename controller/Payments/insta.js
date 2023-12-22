@@ -1,6 +1,6 @@
 const Logger = require("../../app/logger")
-const { User, Payments } = require("../../database")
-const PayInstaPay = require("../../database/models/PayMethods/instaPay")
+const { User, Payments, PayInstaPay } = require("../../database")
+
 
 class InstaController {
     static async create(req, res) {
@@ -16,6 +16,13 @@ class InstaController {
                 error: true,
                 code: 404,
                 message: "User Not Found"
+            })
+        }
+        if (!email) {
+            return res.status(400).json({
+                error: true,
+                code: 400,
+                message: "Email Required"
             })
         }
         const haveInstaPay = await PayInstaPay.findOne({
@@ -48,7 +55,7 @@ class InstaController {
             username: userExist.username,
             PaymentId: PaymentId
         })
-        Payments.update({
+        await Payments.update({
             hasInstaPay: true
         }, {
             where: {

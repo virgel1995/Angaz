@@ -14,7 +14,8 @@ const PayBank = sequelize.define('pay_bank', {
     },
     accountNumber: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     receiverName: {
         type: Sequelize.STRING,
@@ -22,7 +23,7 @@ const PayBank = sequelize.define('pay_bank', {
     },
     IBAN: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
     },
     username: {
         type: Sequelize.STRING,

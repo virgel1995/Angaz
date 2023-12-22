@@ -171,15 +171,6 @@ exports.ServiceLikeOrDisLikeOrFavoriteRules = Validator({
     })
 })
 
-exports.PaymentBankRules = Validator({
-    body: Joi.object().required().keys({
-        userId: Joi.string().required(),
-        bankName: Joi.string().required(),
-        accountNumber: Joi.string().required().min(9).max(17),
-        receiverName: Joi.string().required(),
-        IBAN: Joi.string().min(24).max(34),
-    })
-})
 
 exports.CreateServiceRules = Validator({
     body: Joi.object().required().keys({
@@ -195,5 +186,40 @@ exports.CreateServiceRules = Validator({
         subCategId: Joi.any(),
         discount: Joi.any(),
 
+    })
+})
+
+
+exports.PaymentBankRules = Validator({
+    body: Joi.object().required().keys({
+        userId: Joi.string().required(),
+        bankName: Joi.string().required(),
+        accountNumber: Joi.string().required().min(9).max(17),
+        receiverName: Joi.string().required(),
+        IBAN: Joi.string().min(24).max(34),
+    })
+})
+
+exports.PaymentCardRules = Validator({
+    body: Joi.object().required().keys({
+        userId: Joi.string().required(),
+        cardNumber: Joi.string().required().min(16).max(16),
+        cardHolderName: Joi.string().required(),
+    })
+})
+
+exports.PaymentEwalletRules = Validator({
+    body: Joi.object().required().keys({
+        userId: Joi.string().required(),
+        mobile: Joi.string().required().min(11).max(11),
+        username: Joi.string().required()
+    })
+})
+
+exports.PaymentPaypalRules = Validator({
+    body: Joi.object().required().keys({
+        userId: Joi.string().required(),
+        email: Joi.string().required().email(),
+        username: Joi.string().required()
     })
 })

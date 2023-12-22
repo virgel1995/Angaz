@@ -184,5 +184,10 @@ class UserAuthController {
         });
         res.redirect(`${redirectUrl}?status=success&id=${user.id}&username=${user.username}&role=${user.role}&message=User_Verified_Successfully`);
     }
+    static async getPayments(req, res) {
+        const { id } = req.params
+        const user = await User.scope("payments").findByPk(id)
+        return res.json(user)
+    }
 }
 module.exports = UserAuthController;

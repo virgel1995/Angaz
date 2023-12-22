@@ -464,6 +464,11 @@ exports.UserSkill = UserSkill;
 exports.ProjectSkill = ProjectSkill;
 exports.ProjectAttachments = ProjectAttachments;
 exports.Payments = Payments;
+exports.PayInstaPay = PayInstaPay;
+exports.PayBank = PayBank;
+exports.PayPayPal = PayPayPal
+exports.PayCard = PayCard
+exports.PayEWallet = PayEWallet
 exports.Admin = Admin;
 exports.SiteSettings = SiteSettings;
 exports.User = User;
@@ -480,6 +485,7 @@ exports.Service = Service;
 exports.Jobs = Jobs;
 exports.Skills = Skills;
 exports.Features = Features;
+
 
 
 
