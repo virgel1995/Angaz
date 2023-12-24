@@ -18,6 +18,7 @@ const sequelize = new Sequelize(
     }
 );
 exports.sequelize = sequelize;
+const Payments = require("./models/Payments");
 //    ====================== Import ALL Models Here  =======================
 const User = require("./models/User");
 const Admin = require("./models/Admin");
@@ -32,7 +33,6 @@ const DisputReport = require("./models/DisputReport");
 const Booking = require("./models/booking");
 const Project = require("./models/Project");
 const ProductOffers = require("./models/ProductOffers");
-const Payments = require("./models/Payments");
 const Jobs = require("./models/Jobs");
 const Skills = require("./models/Skills");
 const Features = require("./models/Features");
@@ -452,9 +452,10 @@ const seedSiteSettings = async () => {
         })
     }
 }
-seedSiteSettings()
 
 //    ======================= Export All Models From THis File =======================
+exports.Admin = Admin;
+exports.User = User;
 exports.ProductOffers = ProductOffers;
 exports.ServiceFavorite = ServiceFavorite;
 exports.ServiceDisLikes = ServiceDisLikes;
@@ -469,9 +470,7 @@ exports.PayBank = PayBank;
 exports.PayPayPal = PayPayPal
 exports.PayCard = PayCard
 exports.PayEWallet = PayEWallet
-exports.Admin = Admin;
 exports.SiteSettings = SiteSettings;
-exports.User = User;
 exports.Transaction = Transaction;
 exports.SubCategory = SubCategory;
 exports.Category = Category;
@@ -486,6 +485,7 @@ exports.Jobs = Jobs;
 exports.Skills = Skills;
 exports.Features = Features;
 
+exports.seedSiteSettings = seedSiteSettings
 
 
 

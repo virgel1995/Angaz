@@ -1,7 +1,6 @@
 const HTTP_PORT = process.env.PORT || 3001;
 const ALLOWED_HEADERS = [
     'X-Requested-With',
-    'Content-Encoding',
     'Authorization',
     'Content-Type',
     'Origin',

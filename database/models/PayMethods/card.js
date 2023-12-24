@@ -11,7 +11,6 @@ const PayCard = sequelize.define('pay_card', {
     cardNumber: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
     },
     cardHolderName: {
         type: Sequelize.STRING,
@@ -22,7 +21,13 @@ const PayCard = sequelize.define('pay_card', {
         allowNull: false
     }
 }, {
-    timestamps: false
+    timestamps: false,
+    indexes: [
+        {
+            unique: true,
+            fields: ["cardNumber"]
+        }
+    ]
 })
 
 module.exports = PayCard
