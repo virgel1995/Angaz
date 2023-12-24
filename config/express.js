@@ -3,10 +3,8 @@ exceptionHandler.handle();
 const { ErrorMangement } = require('../middleware');
 const allAppRoutes = require('../routes');
 const config = require('.');
-const UserAgentFetcher = require('./userAgent')
-
+// const UserAgentFetcher = require('./userAgent')
 const requestQueue = [];
-
 /**
  * Processes the next request in the request queue.
  *
@@ -15,7 +13,9 @@ const requestQueue = [];
  */
 function processNextRequest() {
     if (requestQueue.length > 0) {
-        const { req, res, next } = requestQueue[0];
+        const { 
+            // req, res, 
+            next } = requestQueue[0];
         // console.log(`Processing request for ${req.method} ${req.baseUrl}`);
         setTimeout(() => {
             next();
@@ -118,5 +118,4 @@ const ExpressApplication = (app) => {
     app.use(ErrorMangement.handler);
     app.use(ErrorMangement.notFound);
 };
-
 module.exports = ExpressApplication;
