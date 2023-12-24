@@ -102,7 +102,7 @@ class AdminSubCategoreisController {
     }
     static async findAll(req, res) {
         const { sort, page, limit, orderBy } = req.query;
-        const order = orderBy || 'DESC';
+        const order = orderBy || 'ASC';
         const sortedBy = sort || 'id';
         const pageNum = page ? parseInt(page) : 1;
         const pageLimit = limit ? parseInt(limit) : 10;

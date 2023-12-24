@@ -20,7 +20,7 @@ app.use(express.urlencoded({
     extended: true,
     limit: '100mb'
 }))
-const DatabaseMigrationFromOld = require('./app/DatabaseMigration');
+// const DatabaseMigrationFromOld = require('./app/DatabaseMigration');
 
 
 ExpressApplication(app);
@@ -41,8 +41,8 @@ async function startServer() {
                 // seed data here 
             }
             if (process.env.GET_OLD_DATABASE === 'true') {
-                const DbMigration = new DatabaseMigrationFromOld();
-                DbMigration.initConnection(); // to connect to old database 
+                // const DbMigration = new DatabaseMigrationFromOld();
+                // DbMigration.initConnection(); // to connect to old database 
                 // Do not uncomment this DbMigration.migrate() Now as it will create new database
                 // DbMigration.migrate(); // to migrate old database to new
             }
