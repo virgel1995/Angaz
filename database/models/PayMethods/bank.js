@@ -15,7 +15,6 @@ const PayBank = sequelize.define('pay_bank', {
     accountNumber: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
     },
     receiverName: {
         type: Sequelize.STRING,
@@ -34,7 +33,13 @@ const PayBank = sequelize.define('pay_bank', {
         allowNull: false
     }
 }, {
-    timestamps: false
+    timestamps: false,
+    indexes: [
+        {
+            unique: true,
+            fields: ["accountNumber"]
+        }
+    ]
 })
 
 module.exports = PayBank

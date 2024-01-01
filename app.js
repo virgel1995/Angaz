@@ -8,7 +8,7 @@ const express = require("express")
 const Logger = require('./app/logger');
 const ExpressApplication = require('./config/express');
 const config = require('./config');
-const { sequelize } = require('./database');
+const { sequelize, seedSiteSettings } = require('./database');
 
 const app = express()
 app.set('trust proxy', ['loopback', 'linklocal', 'uniquelocal']);
@@ -20,6 +20,7 @@ app.use(express.urlencoded({
     extended: true,
     limit: '100mb'
 }))
+// const DatabaseMigrationFromOld = require('./app/DatabaseMigration');
 
 
 ExpressApplication(app);
@@ -35,8 +36,15 @@ async function startServer() {
             server = app.listen(config.PORT);
             Logger.success('Successfully connected to database');
             Logger.success(`Server started on port ${config.PORT}`);
+            seedSiteSettings()
             if (process.env.SEED_DATA === 'true') {
                 // seed data here 
+            }
+            if (process.env.GET_OLD_DATABASE === 'true') {
+                // const DbMigration = new DatabaseMigrationFromOld();
+                // DbMigration.initConnection(); // to connect to old database 
+                // Do not uncomment this DbMigration.migrate() Now as it will create new database
+                // DbMigration.migrate(); // to migrate old database to new
             }
         } catch (error) {
             // eslint-disable-next-line no-console
@@ -61,7 +69,7 @@ const exitHandler = () => {
         server.close(() => {
             Logger.info('Server closed');
             // process.exit(1)
-            startServer();
+            // startServer();
         });
     } else {
         process.exit(1);
@@ -87,10 +95,3 @@ process.on('SIGTERM', () => {
         server.close();
     }
 });
-const DatabaseMigrationFromOld = require('./app/DatabaseMigration');
-if (process.env.GET_OLD_DATABASE === 'true') {
-    const DbMigration = new DatabaseMigrationFromOld();
-    DbMigration.initConnection(); // to connect to old database 
-    // Do not uncomment this DbMigration.migrate() Now as it will create new database
-    // DbMigration.migrate(); // to migrate old database to new
-}

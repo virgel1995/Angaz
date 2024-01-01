@@ -19,7 +19,7 @@ class AdminAuthController {
             attributes: {
                 exclude: ['password', 'new_email', 'update_email_token', 'update_email_code', 'updatedAt']
             },
-            order: [[order, sortedBy]],
+            order: [[sortedBy, order]],
             limit: pageLimit,
             offset,
         })

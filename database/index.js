@@ -18,6 +18,7 @@ const sequelize = new Sequelize(
     }
 );
 exports.sequelize = sequelize;
+const Payments = require("./models/Payments");
 //    ====================== Import ALL Models Here  =======================
 const User = require("./models/User");
 const Admin = require("./models/Admin");
@@ -31,7 +32,6 @@ const DisputReport = require("./models/DisputReport");
 const Booking = require("./models/booking");
 const Project = require("./models/Project");
 const ProductOffers = require("./models/ProductOffers");
-const Payments = require("./models/Payments");
 const Jobs = require("./models/Jobs");
 const Skills = require("./models/Skills");
 const Features = require("./models/Features");
@@ -150,7 +150,6 @@ Comment.belongsTo(User, {
     onDelete: "CASCADE",
 });
 
-
 // add createdUser to Service
 User.hasMany(Service, {
     foreignKey: "createdUser",
@@ -186,17 +185,27 @@ ExtraService.belongsTo(Service, {
     onDelete: "CASCADE",
 });
 // add createdUser to DisputReport
-User.hasMany(DisputReport, {
-    foreignKey: "createdUser",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-DisputReport.belongsTo(User, {
-    foreignKey: "createdUser",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-
+// User.hasMany(DisputReport, {
+//     foreignKey: "createdUser",
+//     targetKey: "id",
+//     onDelete: "CASCADE",
+// });
+// DisputReport.belongsTo(User, {
+//     foreignKey: "createdUser",
+//     targetKey: "id",
+//     onDelete: "CASCADE",
+// });
+// // add disputeReport to Booking
+// DisputReport.hasMany(Booking, {
+//     foreignKey: "disputeReportId",
+//     targetKey: "id",
+//     onDelete: "CASCADE",
+// });
+// Booking.belongsTo(DisputReport, {
+//     foreignKey: "disputeReportId",
+//     targetKey: "id",
+//     onDelete: "CASCADE",
+// });
 // add createdUser to Booking
 User.hasMany(Booking, {
     foreignKey: "createdUser",
@@ -208,19 +217,6 @@ Booking.belongsTo(User, {
     targetKey: "id",
     onDelete: "CASCADE",
 });
-
-// add disputeReport to Booking
-Booking.hasMany(DisputReport, {
-    foreignKey: "disputeReport",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-DisputReport.belongsTo(Booking, {
-    foreignKey: "disputeReport",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-
 // add createdUser to Projects 
 User.hasMany(Project, {
     foreignKey: "createdUser",
@@ -365,17 +361,7 @@ Jobs.belongsTo(SubCategory, {
     targetKey: "id",
     onDelete: "CASCADE",
 });
-// add disputeReport to Booking
-DisputReport.hasMany(Booking, {
-    foreignKey: "disputeReportId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-Booking.belongsTo(DisputReport, {
-    foreignKey: "disputeReportId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
+
 //  add extra_service to Boolings 
 Booking.belongsTo(ExtraService, {
     foreignKey: "extraServiceId",
@@ -422,9 +408,28 @@ const seedSiteSettings = async () => {
         })
     }
 }
-seedSiteSettings()
 
 //    ======================= Export All Models From THis File =======================
+exports.Admin = Admin;
+exports.User = User;
+exports.Payments = Payments;
+exports.Project = Project;
+exports.Service = Service;
+exports.Jobs = Jobs;
+exports.Category = Category;
+exports.SubCategory = SubCategory;
+exports.SiteSettings = SiteSettings;
+exports.Transaction = Transaction;
+
+
+// Helpers
+exports.Comment = Comment;
+exports.ExtraService = ExtraService;
+exports.Booking = Booking;
+exports.DisputReport = DisputReport;
+exports.Skills = Skills;
+exports.Features = Features;
+
 exports.ProductOffers = ProductOffers;
 exports.ServiceFavorite = ServiceFavorite;
 exports.ServiceDisLikes = ServiceDisLikes;
@@ -433,28 +438,13 @@ exports.ServiceFeatures = ServiceFeatures;
 exports.UserSkill = UserSkill;
 exports.ProjectSkill = ProjectSkill;
 exports.ProjectAttachments = ProjectAttachments;
-exports.Payments = Payments;
 exports.PayInstaPay = PayInstaPay;
 exports.PayBank = PayBank;
 exports.PayPayPal = PayPayPal
 exports.PayCard = PayCard
 exports.PayEWallet = PayEWallet
-exports.Admin = Admin;
-exports.SiteSettings = SiteSettings;
-exports.User = User;
-exports.Transaction = Transaction;
-exports.SubCategory = SubCategory;
-exports.Category = Category;
-exports.Comment = Comment;
-exports.ExtraService = ExtraService;
-exports.Booking = Booking;
-exports.DisputReport = DisputReport;
-exports.Project = Project;
-exports.Service = Service;
-exports.Jobs = Jobs;
-exports.Skills = Skills;
-exports.Features = Features;
 
+exports.seedSiteSettings = seedSiteSettings
 
 
 

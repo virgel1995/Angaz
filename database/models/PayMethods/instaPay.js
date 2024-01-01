@@ -11,7 +11,6 @@ const PayInstaPay = sequelize.define('pay_instapay', {
     email: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
     },
     username: {
         type: Sequelize.STRING,
@@ -22,7 +21,13 @@ const PayInstaPay = sequelize.define('pay_instapay', {
         allowNull: false
     }
 }, {
-    timestamps: false
+    timestamps: false,
+    indexes: [
+        {
+            unique: true,
+            fields: ["email"]
+        }
+    ]
 })
 
 module.exports = PayInstaPay

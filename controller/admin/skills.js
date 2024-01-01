@@ -2,23 +2,43 @@ const { Skills } = require("../../database")
 
 class AdminSkillsController {
     static async findAll(req, res) {
-        let { page, limit } = req.query
-        const skills = await Skills.findAndCountAll({
+        const { sort, page, limit, orderBy } = req.query;
+        const order = orderBy || 'ASC';
+        const sortedBy = sort || 'id';
+        const pageNum = page ? parseInt(page) : 1;
+        const pageLimit = limit ? parseInt(limit) : 10;
+        const offset = (pageNum - 1) * pageLimit;
+        const categories = await Skills.findAll({
             where: {},
-            limit: limit ? parseInt(limit) : 10,
-            offset: (page ? parseInt(page) : 1 - 1) * (limit ? parseInt(limit) : 10),
-        },
+            order: [[sortedBy, order]],
+            limit: pageLimit,
+            offset,
+        })
 
-        )
-        return res.status(200).json({
+        const pagination = {
+            page: pageNum,
+            itemPerPage: pageLimit,
+            totalItems: categories.length,
+            count: categories?.length,
+            nextPage: pageNum + 1,
+            previousPage: pageNum - 1,
+            hasNextPage: pageLimit * pageNum < categories.length,
+            hasNextTwoPage: pageLimit * (pageNum + 2) < categories.length,
+            hasNextThreePage: pageLimit * (pageNum + 3) < categories.length,
+            hasPreviousPage: pageNum > 1,
+            hasPagenation: categories.length > pageLimit,
+        }
+        return res.json({
             error: false,
             code: 200,
             message: "Skills fetched successfully",
-            data: skills
+            data: categories,
+            pagination
         })
     }
     static async create(req, res) {
-        const { name } = req.body
+        let { name } = req.body
+        name = name.toLowerCase()
         if (!name) {
             return res.status(400).json({
                 error: true,
@@ -43,7 +63,8 @@ class AdminSkillsController {
         })
     }
     static async update(req, res) {
-        const { id, name } = req.body
+        let { id, name } = req.body
+        name = name.toLowerCase()
         if (!id) {
             return res.status(400).json({
                 error: true,

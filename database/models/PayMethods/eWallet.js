@@ -11,7 +11,6 @@ const PayEWallet = sequelize.define('pay_ewallet', {
     mobile: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
     },
     username: {
         type: Sequelize.STRING,
@@ -22,7 +21,13 @@ const PayEWallet = sequelize.define('pay_ewallet', {
         allowNull: false
     }
 }, {
-    timestamps: false
+    timestamps: false,
+    indexes: [
+        {
+            unique: true,
+            fields: ["mobile"]
+        }
+    ]
 })
 
 module.exports = PayEWallet

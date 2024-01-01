@@ -145,7 +145,6 @@ class ProjectController {
                 );
             }
         }
-
         if (title == project.title &&
             description == project.description &&
             expectedBudget == project.expectedBudget &&
