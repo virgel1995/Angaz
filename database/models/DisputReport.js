@@ -8,13 +8,13 @@ const DisputReport = sequelize.define("disputReport", {
         autoIncrement: true,
         primaryKey: true
     },
-    uuid : {
+    uuid: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         allowNull: false,
     },
-    oldId: {
-        type: Sequelize.INTEGER,
+    image: {
+        type: Sequelize.STRING,
         allowNull: true,
     },
     title: {
@@ -24,6 +24,11 @@ const DisputReport = sequelize.define("disputReport", {
     description: {
         type: Sequelize.STRING,
         allowNull: true
+    },
+    type: {
+        type: Sequelize.STRING,
+        enum: ["user", "service", "project"],
+        allowNull: false,
     }
 })
 

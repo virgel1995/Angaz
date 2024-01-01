@@ -24,7 +24,6 @@ const Admin = require("./models/Admin");
 const Transaction = require("./models/Transaction");
 const Category = require("./models/Category");
 const SubCategory = require("./models/subCategory");
-const Product = require("./models/Product");
 const Comment = require("./models/Comment");
 const Service = require("./models/Service");
 const ExtraService = require("./models/ExtraService");
@@ -150,17 +149,8 @@ Comment.belongsTo(User, {
     targetKey: "id",
     onDelete: "CASCADE",
 });
-// add productId to Comment
-Product.hasMany(Comment, {
-    foreignKey: "productId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-Comment.belongsTo(Product, {
-    foreignKey: "productId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
+
+
 // add createdUser to Service
 User.hasMany(Service, {
     foreignKey: "createdUser",
@@ -206,17 +196,7 @@ DisputReport.belongsTo(User, {
     targetKey: "id",
     onDelete: "CASCADE",
 });
-// add productId to DisputReport
-Product.hasMany(DisputReport, {
-    foreignKey: "productId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-DisputReport.belongsTo(Product, {
-    foreignKey: "productId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
+
 // add createdUser to Booking
 User.hasMany(Booking, {
     foreignKey: "createdUser",
@@ -228,17 +208,7 @@ Booking.belongsTo(User, {
     targetKey: "id",
     onDelete: "CASCADE",
 });
-// add productId to Booking
-Product.hasMany(Booking, {
-    foreignKey: "productId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
-Booking.belongsTo(Product, {
-    foreignKey: "productId",
-    targetKey: "id",
-    onDelete: "CASCADE",
-});
+
 // add disputeReport to Booking
 Booking.hasMany(DisputReport, {
     foreignKey: "disputeReport",
@@ -475,7 +445,6 @@ exports.User = User;
 exports.Transaction = Transaction;
 exports.SubCategory = SubCategory;
 exports.Category = Category;
-exports.Product = Product;
 exports.Comment = Comment;
 exports.ExtraService = ExtraService;
 exports.Booking = Booking;
